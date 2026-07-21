@@ -1,0 +1,770 @@
+{
+  "common": {
+    "loading": "加载中...",
+    "retry": "重试",
+    "back": "返回",
+    "cancel": "取消",
+    "confirm": "确认",
+    "save": "保存",
+    "delete": "删除",
+    "or": "或",
+    "creating": "创建中...",
+    "submitting": "提交中...",
+    "permanentUse": "永久使用",
+    "openMenu": "打开菜单",
+    "note": "备注",
+    "translation": "翻译",
+    "genderMfn": "阳/阴/中",
+    "emptyCell": "空单元格",
+    "notAvailable": "—",
+    "stepIndicator": "第 {{current}} / {{total}} 步",
+    "stepAriaLabel": "第 {{step}} 步",
+    "selectedCount": "已选 {{count}} 项",
+    "selectedWithActionable": "已选 {{selected}} 项（可操作 {{actionable}} 项）",
+    "pagesCount": "{{count}} 个页面",
+    "updatedAt": "更新于 {{date}}",
+    "notebooksCount": "{{count}} 本波兰语学习笔记本",
+    "cacheSizeMb": "{{size}} MB",
+    "versionShort": "v{{version}}",
+    "versionFull": "版本 v{{version}}"
+  },
+  "auth": {
+    "login": "登录",
+    "register": "注册",
+    "logout": "退出登录",
+    "welcomeBack": "欢迎回来",
+    "loginSubtitle": "登录后继续您的波兰语学习",
+    "createAccount": "创建账号",
+    "registerSubtitle": "注册后开始您的波兰语学习之旅",
+    "email": "邮箱地址",
+    "password": "密码",
+    "confirmPassword": "确认密码",
+    "rememberMe": "记住我",
+    "forgotPassword": "忘记密码？",
+    "signInWithGoogle": "使用 Google 账号登录",
+    "noAccount": "没有账号？",
+    "signUpFree": "免费注册",
+    "hasAccount": "已有账号？",
+    "goToLogin": "去登录",
+    "termsPrefix": "登录即表示同意我们的",
+    "termsOfService": "服务条款",
+    "acceptedTermsPrefix": "我已阅读并同意",
+    "and": "与",
+    "privacyPolicy": "隐私政策",
+    "toast": {
+      "googleLoginFailed": "Google 登录失败，请重试",
+      "loginSuccess": "登录成功",
+      "wrongCredentials": "邮箱或密码错误",
+      "registerSuccess": "注册成功",
+      "verifyEmailSent": "请查收验证邮件并完成验证，然后登录。",
+      "registerFailed": "注册失败，请重试",
+      "enterEmailFirst": "请先输入邮箱地址",
+      "resetEmailSent": "重置邮件已发送，请查收邮箱",
+      "resetEmailFailed": "发送失败，请稍后重试",
+      "emailRateLimit": "邮件发送过于频繁，请稍后再试",
+      "emailNotConfirmed": "请先验证邮箱后再登录",
+      "emailAlreadyRegistered": "该邮箱已注册，请直接登录"
+    },
+    "errors": {
+      "emailRequired": "请输入邮箱",
+      "emailInvalid": "请输入有效的邮箱地址",
+      "passwordRequired": "请输入密码",
+      "passwordMinLength": "密码至少 6 位",
+      "confirmPasswordRequired": "请确认密码",
+      "termsRequired": "请阅读并同意服务条款与隐私政策",
+      "passwordMismatch": "两次输入的密码不一致",
+      "notAuthenticated": "请先登录",
+      "sessionExpired": "登录已过期，请重新登录"
+    }
+  },
+  "layout": {
+    "sidebar": {
+      "notebookList": "笔记本列表",
+      "inflectionGuide": "变格指南",
+      "tutorial": "使用教程",
+      "myNotebooks": "我的笔记本",
+      "loginToViewNotebooks": "登录后查看笔记本",
+      "loadFailed": "加载失败",
+      "noNotebooks": "暂无笔记本",
+      "newPage": "新建页面",
+      "creatingPage": "正在创建页面...",
+      "vipMember": "VIP 会员",
+      "freeTier": "免费版",
+      "language": "语言"
+    },
+    "bottomNav": {
+      "home": "首页",
+      "guide": "指南",
+      "sheet": "表格"
+    }
+  },
+  "notebooks": {
+    "title": "我的笔记本",
+    "new": "新建",
+    "newNotebook": "新建笔记本",
+    "notebookName": "笔记本名称",
+    "namePlaceholder": "请输入名称",
+    "color": "颜色",
+    "create": "创建",
+    "creating": "创建中...",
+    "searchPlaceholder": "搜索笔记本",
+    "emptySearch": "没有匹配的笔记本",
+    "emptyList": "还没有笔记本，点击「新建」开始",
+    "loginTitle": "登录后管理笔记本",
+    "loginSubtitle": "登录或注册账号，开始创建波兰语学习笔记。",
+    "goToLogin": "前往登录",
+    "loadFailed": "加载笔记本失败",
+    "cardMeta": "{{count}} 个页面 · 更新于 {{date}}",
+    "guidePromoTitle": "变格指南",
+    "guidePromoDescription": "查看波兰语名词、动词、形容词等变格表",
+    "emptyStateDescription": "还没有页面，创建第一个页面开始记录波兰语单词和变格。",
+    "newPage": "新建页面",
+    "backToList": "返回笔记本列表",
+    "deleteTitle": "删除笔记本",
+    "deleteDescription": "确定删除「{{name}}」？所有页面和数据将被永久删除。",
+    "toast": {
+      "createFailed": "创建失败，请重试",
+      "loadSheetsFailed": "加载页面失败",
+      "duplicateName": "已存在",
+      "renameFailed": "重命名失败",
+      "createPageFailed": "创建页面失败",
+      "deleteFailedRestored": "删除失败，已恢复",
+      "createFailedNetwork": "创建失败，请检查网络或稍后重试"
+    },
+    "errors": {
+      "nameRequired": "名称不能为空",
+      "duplicateName": "已存在",
+      "loadFailed": "加载笔记本失败",
+      "sessionExpired": "登录已过期，请重新登录"
+    }
+  },
+  "sheet": {
+    "loading": "加载中...",
+    "pageNotFound": "页面不存在",
+    "pageLoadFailed": "页面加载失败",
+    "pageNotSpecified": "未指定页面",
+    "untitledPage": "未命名页面",
+    "defaultNotebookName": "我的笔记本",
+    "toolbar": {
+      "addRow": "行",
+      "addColumn": "列",
+      "freeze": "冻结",
+      "search": "搜索",
+      "select": "选择",
+      "newPage": "新建页面"
+    },
+    "search": {
+      "open": "在表格中搜索",
+      "placeholder": "搜索单词或翻译…",
+      "matchCount": "找到 {{count}} 个匹配项",
+      "noMatches": "未找到匹配项",
+      "previous": "上一个匹配",
+      "next": "下一个匹配",
+      "close": "关闭搜索"
+    },
+    "export": {
+      "toolbar": {
+        "export": "导出"
+      },
+      "menu": {
+        "image": "导出为 PNG 图片",
+        "excel": "导出为 Excel"
+      },
+      "image": {
+        "title": "导出图片",
+        "description": "表格高度超过可视区域，请选择导出范围。",
+        "visibleArea": "可视区域",
+        "fullTable": "全部内容（多张 PNG）",
+        "longPressHint": "若未自动下载，请长按图片保存。"
+      },
+      "toast": {
+        "excelSuccess": "Excel 文件已下载",
+        "excelGenerating": "正在生成 Excel 文件…",
+        "imageSuccess": "图片已导出",
+        "imagePages": "已导出 {{count}} 张图片",
+        "failed": "导出失败",
+        "tooManyRows": "数据量较大，正在生成文件，请稍候…"
+      }
+    },
+    "tabMenu": {
+      "duplicate": "复制",
+      "moveTo": "移动到",
+      "delete": "删除"
+    },
+    "deletePageTitle": "删除页面",
+    "deletePageDescription": "确定删除「{{title}}」？此页面及所有数据将被永久删除。",
+    "deleteRowTitle": "删除行",
+    "deleteRowDescription": "确定删除该行？所有单元格数据将被永久删除。",
+    "deleteColumnTitle": "删除列",
+    "deleteColumnDescription": "确定删除「{{column}}」？此列所有数据将被永久删除。",
+    "moveDialog": {
+      "title": "移动到笔记本",
+      "noTargets": "没有其他笔记本可移动"
+    },
+    "columnPicker": {
+      "title": "词形选择器",
+      "addCustomNoteColumn": "添加自定义备注列",
+      "columnNamePlaceholder": "列名称",
+      "add": "添加",
+      "noPresetsForPos": "该词性暂无可用变格列"
+    },
+    "freeze": {
+      "title": "冻结设置",
+      "freezeRowsLabel": "冻结行数（含表头）",
+      "freezeRowsHint": "当前：{{count}} 行（默认 1 = 表头行）",
+      "freezeColsLabel": "冻结列数（含翻译列）",
+      "freezeColsHint": "当前：{{count}} 列（最多 {{max}} 列，默认 1 = 翻译列）",
+      "reset": "取消冻结",
+      "configTitle": "冻结设置",
+      "srOnly": "冻结"
+    },
+    "selection": {
+      "selectAll": "全选",
+      "done": "完成",
+      "hide": "隐藏",
+      "show": "显示"
+    },
+    "rowMenu": {
+      "srOnly": "行菜单",
+      "markRowColor": "标记行颜色",
+      "deleteRow": "删除行"
+    },
+    "columnMenu": {
+      "srOnly": "列菜单",
+      "hideColumn": "隐藏列",
+      "showColumn": "显示列",
+      "deleteColumn": "删除列",
+      "notePlaceholder": "备注"
+    },
+    "markerColor": {
+      "title": "标记颜色",
+      "noColor": "无颜色",
+      "fogBlue": "雾蓝",
+      "grayGreen": "灰绿",
+      "lotusPink": "藕粉"
+    },
+    "cell": {
+      "aiGenerated": "AI",
+      "aiTooltip": "由 AI 生成，仅供参考"
+    },
+    "ambiguity": {
+      "selectMeaning": "选择词义",
+      "selectParadigm": "选择变格范式",
+      "selectPos": "选择词性",
+      "meaningDescription": "该词有多种可能含义，请选择正确的一项。",
+      "paradigmDescription": "该词有多种变格范式，请选择正确的一项。",
+      "posDescription": "该词可能属于不同词性，请选择正确的一项。",
+      "wordPrefix": "「{{word}}」"
+    },
+    "columns": {
+      "translation": "翻译",
+      "lemmaNomSg": "单词(主格)/原形",
+      "nominativeSg": "主格(单数)",
+      "noteDefault": "备注",
+      "alreadyAdded": "已添加"
+    },
+    "pos": {
+      "noun": "名词",
+      "verb": "动词",
+      "adjective": "形容词",
+      "pronoun": "代词",
+      "numeral": "数词",
+      "adverb": "副词",
+      "preposition": "介词",
+      "conjunction": "连词",
+      "custom": "自定义"
+    },
+    "cases": {
+      "nominative_singular": "单数主格",
+      "genitive_singular": "单数属格",
+      "dative_singular": "单数与格",
+      "accusative_singular": "单数宾格",
+      "instrumental_singular": "单数工具格",
+      "locative_singular": "单数方位格",
+      "vocative_singular": "单数呼格",
+      "nominative_plural": "复数主格",
+      "genitive_plural": "复数属格",
+      "dative_plural": "复数与格",
+      "accusative_plural": "复数宾格",
+      "instrumental_plural": "复数工具格",
+      "locative_plural": "复数方位格",
+      "vocative_plural": "复数呼格",
+      "withGender": "{{label}}（阳/阴/中）"
+    },
+    "verbColumns": {
+      "verb_infinitive": "不定式",
+      "verb_present_1sg": "现在时 · 我",
+      "verb_present_2sg": "现在时 · 你（单）",
+      "verb_present_3sg": "现在时 · 他/她/它",
+      "verb_present_1pl": "现在时 · 我们",
+      "verb_present_2pl": "现在时 · 你们",
+      "verb_present_3pl": "现在时 · 他们",
+      "verb_past_1sg": "过去时 · 我",
+      "verb_past_2sg": "过去时 · 你（单）",
+      "verb_past_3sg": "过去时 · 他/她/它",
+      "verb_past_1pl": "过去时 · 我们",
+      "verb_past_2pl": "过去时 · 你们",
+      "verb_past_3pl": "过去时 · 他们"
+    },
+    "toast": {
+      "enterWordFirst": "请先在单元格中输入单词",
+      "rowsLoadFailed": "行数据加载失败",
+      "cellMarkerSaveFailed": "单元格标记保存失败",
+      "rowMarkerSaveFailed": "行标记保存失败",
+      "rowOrderSaveFailed": "行顺序保存失败",
+      "addRowFailed": "添加行失败",
+      "deleteRowFailed": "删除行失败",
+      "columnConfigSaveFailed": "列配置保存失败",
+      "deleteColumnFailed": "删除列失败",
+      "addColumnFailed": "添加列失败",
+      "freezeSaveFailed": "冻结设置保存失败",
+      "createTabFailed": "创建页面失败",
+      "renameFailed": "重命名失败",
+      "deleteTabFailed": "删除页面失败",
+      "duplicateTabFailed": "复制页面失败",
+      "moveTabFailed": "移动页面失败",
+      "wordNotFound": "该词未收录，请手动输入",
+      "serviceUnavailable": "服务暂时不可用，已使用离线词典",
+      "timeout": "处理超时，请重试",
+      "slow": "处理较慢，请稍候"
+    }
+  },
+  "settings": {
+    "title": "设置",
+    "sections": {
+      "dataManagement": "数据管理",
+      "legal": "法律与协议",
+      "preferences": "偏好设置",
+      "helpFeedback": "帮助与反馈",
+      "dangerZone": "危险区域"
+    },
+    "clearCache": "清除缓存",
+    "termsOfService": "服务条款",
+    "privacyPolicy": "隐私政策",
+    "changeLanguage": "更换语言",
+    "themeMode": "主题模式",
+    "feedback": "意见反馈",
+    "aboutUs": "关于我们",
+    "contactEmail": "联系邮箱",
+    "deleteAccount": "注销账号",
+    "logoutTitle": "退出登录",
+    "logoutDescription": "确定要退出登录吗？未保存内容将自动缓存至本地。",
+    "logoutConfirm": "退出",
+    "deleteAccountTitle": "注销账号",
+    "deleteAccountDescription": "将永久删除所有笔记本、页面和行数据，此操作不可恢复。",
+    "deleteAccountConfirm": "确认注销",
+    "deleteAccountTypePrompt": "请在下方输入「{{word}}」以确认：",
+    "deleteAccountConfirmWord": "注销",
+    "deleteAccountDeleting": "正在注销...",
+    "toast": {
+      "loggedOut": "已退出登录",
+      "aboutDescription": "本应用由独立开发者用心打造，感谢您的支持！",
+      "deleteAccountSuccess": "账号已注销",
+      "deleteAccountFailed": "注销失败，请稍后重试"
+    },
+    "cache": {
+      "title": "清除缓存",
+      "description": "仅清除本地临时文件，不影响云端笔记本数据。",
+      "confirm": "清除缓存",
+      "clearing": "清除中...",
+      "freed": "已释放 {{size}} MB"
+    },
+    "feedbackForm": {
+      "title": "意见反馈",
+      "issueType": "问题类型",
+      "descriptionLabel": "描述（10–500 字）",
+      "descriptionPlaceholder": "请描述问题或建议",
+      "screenshotsLabel": "截图（可选，最多 3 张，每张不超过 5 MB）",
+      "screenshotsSelected": "已选 {{count}} 张",
+      "submit": "提交反馈",
+      "types": {
+        "bug": "Bug",
+        "rule": "规则错误",
+        "ux": "体验建议",
+        "other": "其他"
+      },
+      "errors": {
+        "descriptionMin": "描述至少 10 个字符",
+        "descriptionMax": "描述不能超过 500 个字符",
+        "maxFiles": "最多上传 {{max}} 张截图",
+        "imagesOnly": "仅支持图片",
+        "fileTooLarge": "每张图片不超过 5 MB"
+      },
+      "success": "反馈已收到，我们将在 3 个工作日内回复。"
+    },
+    "account": {
+      "upgradeVip": "升级 VIP"
+    },
+    "theme": {
+      "light": "浅色",
+      "dark": "深色",
+      "system": "跟随系统"
+    },
+    "language": {
+      "zh-CN": "简体中文",
+      "en": "English",
+      "uk": "Українська",
+      "de": "Deutsch"
+    }
+  },
+  "vip": {
+    "title": "升级 VIP",
+    "subtitle": "解锁全部学习功能，无限使用",
+    "vipMember": "VIP 会员",
+    "comparisonTitle": "方案对比",
+    "offlineMessage": "当前离线，请检查网络连接",
+    "backToSettings": "返回设置",
+    "paymentUnavailable": "您所在地区暂不支持支付，请稍后再试",
+    "mockPay": "模拟支付成功（开发测试）",
+    "paymentRedirectHint": "支付功能即将上线，请使用下方「模拟支付成功」按钮进行开发测试",
+    "rowLimit": {
+      "title": "已达到免费版行数上限",
+      "description": "您已达到免费版 50 行限制，升级 VIP 可无限添加",
+      "currentCount": "当前已用 {{count}} / {{limit}} 行",
+      "upgrade": "升级 VIP",
+      "countFailed": "无法检查行数限制，请稍后重试"
+    },
+    "toast": {
+      "upgradeSuccess": "升级成功！感谢您的支持",
+      "upgradeFailed": "升级失败，请稍后重试"
+    },
+    "plans": {
+      "free": "免费版",
+      "vip": "VIP",
+      "recommended": "推荐",
+      "lifetime": "终身会员",
+      "price": "14.99 USD"
+    },
+    "features": {
+      "free": {
+        "oneNotebook": "1 本笔记本",
+        "maxRows": "最多 50 行单词",
+        "ads": "功能页有广告",
+        "noExport": "不支持导出"
+      },
+      "vip": {
+        "unlimitedNotebooks": "无限笔记本",
+        "unlimitedRows": "无限行数",
+        "noAds": "功能页无广告",
+        "export": "导出图片 / Excel"
+      }
+    }
+  },
+  "tutorial": {
+    "title": "使用教程",
+    "subtitle": "5 步快速上手波兰语笔记本",
+    "prev": "上一步",
+    "next": "下一步",
+    "steps": {
+      "1": {
+        "title": "创建笔记本",
+        "description": "在首页点击「新建笔记本」，给笔记本起个名字，选个喜欢的颜色，方便区分。"
+      },
+      "2": {
+        "title": "添加页面和单词 & 一键生成变格和翻译",
+        "description": "打开笔记本并创建页面，选择你想要添加的变格或变形列(支持添加自定义备注列，输入单词后点击「✨ Generate」，自动补全所有变格和翻译。AI 补全的内容会带「AI」角标。"
+      },
+      "3": {
+        "title": "选择隐藏/显示",
+        "description": "进入选择模式批量隐藏/显示单元格用于自测。双击单元格可快速切换隐藏状态。"
+      },
+      "4": {
+        "title": "表格编辑操作",
+        "description": "1.点击「🔍」搜索单词，高亮显示所有匹配位置，上下导航快速定位。2.支持导出为 Excel 或图片，方便打印、分享或备备份。3.支持高亮单个单元格或者整行高亮。"
+      },
+      "5": {
+        "title": "语言切换",
+        "description": "支持 4 种界面语言(中文,英语,乌克兰语,德语)，切换后所有文案,表格列名,以及新添加的单词翻译同步更新。"
+      }
+    }
+  },
+  "agreement": {
+    "termsOfService": "服务条款",
+    "privacyPolicy": "隐私政策",
+    "legalDocument": "法律文件",
+    "loading": "加载协议内容...",
+    "placeholder": "完整法律文本即将发布。"
+  },
+  "guide": {
+    "title": "变格指南",
+    "subtitle": "波兰语名词、形容词、代词等变格参考表",
+    "translationHeader": "翻译",
+    "personHeader": "人称",
+    "presentHeader": "现在时",
+    "pastHeader": "过去时",
+    "verbExampleBadge": "示例动词：{{lemma}}（{{translation}}）",
+    "singular": "单数",
+    "plural": "复数",
+    "posTabs": {
+      "noun": "名词",
+      "adverb": "副词",
+      "adjective": "形容词",
+      "pronoun": "代词",
+      "numeral": "数词",
+      "verb": "动词",
+      "preposition": "介词",
+      "conjunction": "连词"
+    },
+    "pronounSub": {
+      "personal": "人称代词",
+      "demonstrative": "指示代词"
+    },
+    "numeralSub": {
+      "two_three_four": "2/3/4",
+      "five_plus": "5+",
+      "ordinal": "序数词"
+    },
+    "caseHeaders": {
+      "singular": {
+        "nom": "单数主格",
+        "gen": "单数属格",
+        "dat": "单数与格",
+        "acc": "单数宾格",
+        "ins": "单数工具格",
+        "loc": "单数方位格",
+        "voc": "单数呼格"
+      },
+      "plural": {
+        "nom": "复数主格",
+        "gen": "复数属格",
+        "dat": "复数与格",
+        "acc": "复数宾格",
+        "ins": "复数工具格",
+        "loc": "复数方位格",
+        "voc": "复数呼格"
+      }
+    },
+    "posDescriptions": {
+      "noun": "名词（rzeczownik）有性（阳/阴/中）和数（单/复），共 7 个格。",
+      "adjective": "形容词（przymiotnik）随性、数和格变化。",
+      "pronoun": "代词（zaimek）：部分像形容词变格，部分有特殊形式。",
+      "numeral": "数词（liczebnik）：2/3/4 像形容词变格，5+ 像名词变格。",
+      "verb": "动词（czasownik）随时态、人称和数变化，过去时区分性。",
+      "adverb": "副词（przysłówek）不变格。",
+      "preposition": "介词（przyimek）不变格，但要求特定格。",
+      "conjunction": "连词（spójnik）不变格。"
+    },
+    "cases": {
+      "nom": {
+        "name": "主格",
+        "description": "句子主语",
+        "exampleTranslation": "房子很大。"
+      },
+      "gen": {
+        "name": "属格",
+        "description": "所有、部分或否定",
+        "exampleTranslation": "没有牛奶。"
+      },
+      "dat": {
+        "name": "与格",
+        "description": "间接宾语或动作方向",
+        "exampleTranslation": "我给妈妈送花。"
+      },
+      "acc": {
+        "name": "宾格",
+        "description": "直接宾语或运动方向",
+        "exampleTranslation": "我看见猫。"
+      },
+      "ins": {
+        "name": "工具格",
+        "description": "工具、方式或伴随",
+        "exampleTranslation": "我用笔写字。"
+      },
+      "loc": {
+        "name": "方位格",
+        "description": "位置（常与 w/na 连用）",
+        "exampleTranslation": "我住在华沙。"
+      },
+      "voc": {
+        "name": "呼格",
+        "description": "直接称呼",
+        "exampleTranslation": "安娜，过来！"
+      }
+    },
+    "entries": {
+      "nouns": {
+        "kobieta": {
+          "translation": "女人",
+          "label": "阴性 f."
+        },
+        "dom": {
+          "translation": "房子",
+          "label": "阳性 m."
+        },
+        "dziecko": {
+          "translation": "孩子",
+          "label": "中性 n."
+        }
+      },
+      "adjectives": {
+        "dobry": {
+          "translation": "好的"
+        },
+        "duzy": {
+          "translation": "大的"
+        },
+        "nowy": {
+          "translation": "新的"
+        }
+      },
+      "pronouns": {
+        "demonstrative": {
+          "ten": {
+            "translation": "这"
+          },
+          "tamten": {
+            "translation": "那"
+          }
+        },
+        "personal": {
+          "ja": {
+            "translation": "我"
+          },
+          "ty": {
+            "translation": "你"
+          }
+        }
+      },
+      "numerals": {
+        "234": {
+          "dwa": {
+            "translation": "二"
+          },
+          "trzy": {
+            "translation": "三"
+          },
+          "cztery": {
+            "translation": "四"
+          }
+        },
+        "fivePlus": {
+          "piec": {
+            "translation": "五"
+          }
+        },
+        "ordinal": {
+          "pierwszy": {
+            "translation": "第一"
+          },
+          "drugi": {
+            "translation": "第二"
+          }
+        }
+      },
+      "verbs": {
+        "robic": {
+          "translation": "做 / 制作",
+          "persons": {
+            "1sg": "我 (ja)",
+            "2sg": "你 (ty)",
+            "3sg": "他/她/它",
+            "1pl": "我们 (my)",
+            "2pl": "你们 (wy)",
+            "3pl": "他们"
+          }
+        }
+      },
+      "invariable": {
+        "adverb": {
+          "time": {
+            "title": "时间",
+            "description": "副词（przysłówek）不变格。",
+            "items": {
+              "dzis": "今天",
+              "jutro": "明天",
+              "wczoraj": "昨天",
+              "teraz": "现在",
+              "juz": "已经",
+              "jeszcze": "还 / 仍然",
+              "zawsze": "总是",
+              "nigdy": "从不",
+              "czesto": "经常",
+              "wkrotce": "很快"
+            }
+          },
+          "place": {
+            "title": "地点",
+            "items": {
+              "tu_tutaj": "这里",
+              "tam": "那里",
+              "wszedzie": "到处",
+              "nigdzie": "无处",
+              "blisko": "近",
+              "daleko": "远",
+              "wewnatrz": "里面",
+              "na_zewnatrz": "外面",
+              "w_gore": "向上",
+              "w_dol": "向下"
+            }
+          },
+          "degree": {
+            "title": "程度",
+            "items": {
+              "bardzo": "非常",
+              "troche": "一点",
+              "calkiem": "相当",
+              "dosc": "足够",
+              "za": "太 / 过于",
+              "mniej": "更少",
+              "wiecej": "更多",
+              "najbardziej": "最",
+              "prawie": "几乎",
+              "zupelnie": "完全"
+            }
+          },
+          "manner": {
+            "title": "方式",
+            "items": {
+              "tak": "这样",
+              "inaczej": "不同地",
+              "razem": "一起",
+              "szybko": "快",
+              "wolno": "慢",
+              "dobrze": "好",
+              "zle": "差",
+              "prosto": "直接",
+              "osobno": "分开",
+              "naprawde": "真的"
+            }
+          }
+        },
+        "preposition": {
+          "common": {
+            "title": "常用介词",
+            "description": "介词（przyimek）不变格，但要求特定格。",
+            "items": {
+              "w": "在…里 (+ 方位/宾)",
+              "na": "在…上 (+ 方位/宾)",
+              "do": "到… (+ 属)",
+              "z": "从 / 和 (+ 属/工)",
+              "od": "从 / 自从 (+ 属)",
+              "po": "在…之后 (+ 方位)",
+              "przed": "在…之前 (+ 工/宾)",
+              "za": "在…后面 (+ 工/宾)",
+              "o": "关于 (+ 方位/宾)",
+              "dla": "为了 (+ 属)"
+            }
+          }
+        },
+        "conjunction": {
+          "common": {
+            "title": "常用连词",
+            "description": "连词（spójnik）不变格。",
+            "items": {
+              "i": "和",
+              "ale": "但是",
+              "lub": "或",
+              "bo": "因为",
+              "ze": "那（从句）",
+              "wiec": "所以",
+              "jednak": "然而",
+              "albo": "或者",
+              "czy": "是否 / 或",
+              "poniewaz": "因为"
+            }
+          }
+        }
+      }
+    }
+  }
+}

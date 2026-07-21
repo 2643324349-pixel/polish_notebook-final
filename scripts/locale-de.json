@@ -1,0 +1,633 @@
+{
+  "common": {
+    "loading": "Wird geladen...",
+    "retry": "Erneut versuchen",
+    "back": "Zurück",
+    "cancel": "Abbrechen",
+    "confirm": "Bestätigen",
+    "save": "Speichern",
+    "delete": "Löschen",
+    "or": "oder",
+    "creating": "Wird erstellt...",
+    "submitting": "Wird gesendet...",
+    "permanentUse": "Lebenslanger Zugang",
+    "openMenu": "Menü öffnen",
+    "note": "Notiz",
+    "translation": "Übersetzung",
+    "genderMfn": "m/w/s",
+    "emptyCell": "Leere Zelle",
+    "notAvailable": "—",
+    "stepIndicator": "Schritt {{current}} / {{total}}",
+    "stepAriaLabel": "Schritt {{step}}",
+    "selectedCount": "{{count}} ausgewählt",
+    "selectedWithActionable": "{{selected}} ausgewählt ({{actionable}} bearbeitbar)",
+    "pagesCount": "{{count}} Seiten",
+    "updatedAt": "Aktualisiert {{date}}",
+    "notebooksCount": "{{count}} Polnisch-Lernhefte",
+    "cacheSizeMb": "{{size}} MB",
+    "versionShort": "v{{version}}",
+    "versionFull": "Version v{{version}}"
+  },
+  "auth": {
+    "login": "Anmelden",
+    "register": "Registrieren",
+    "logout": "Abmelden",
+    "welcomeBack": "Willkommen zurück",
+    "loginSubtitle": "Melden Sie sich an, um Ihr Polnischlernen fortzusetzen",
+    "createAccount": "Konto erstellen",
+    "registerSubtitle": "Registrieren Sie sich für Ihre Polnisch-Lernreise",
+    "email": "E-Mail-Adresse",
+    "password": "Passwort",
+    "confirmPassword": "Passwort bestätigen",
+    "rememberMe": "Angemeldet bleiben",
+    "forgotPassword": "Passwort vergessen?",
+    "signInWithGoogle": "Mit Google anmelden",
+    "noAccount": "Noch kein Konto?",
+    "signUpFree": "Kostenlos registrieren",
+    "hasAccount": "Bereits ein Konto?",
+    "goToLogin": "Zur Anmeldung",
+    "termsPrefix": "Mit der Anmeldung stimmen Sie unseren",
+    "termsOfService": "Nutzungsbedingungen",
+    "acceptedTermsPrefix": "Ich habe gelesen und stimme zu:",
+    "userAgreement": "Nutzungsvereinbarung",
+    "and": "und",
+    "privacyPolicy": "Datenschutzrichtlinie",
+    "toast": {
+      "googleLoginFailed": "Google-Anmeldung fehlgeschlagen. Bitte erneut versuchen.",
+      "loginSuccess": "Erfolgreich angemeldet",
+      "wrongCredentials": "E-Mail oder Passwort falsch",
+      "registerSuccess": "Konto erfolgreich erstellt",
+      "registerFailed": "Registrierung fehlgeschlagen. Bitte erneut versuchen.",
+      "enterEmailFirst": "Bitte geben Sie zuerst Ihre E-Mail ein",
+      "resetEmailSent": "E-Mail zum Zurücksetzen gesendet. Bitte Posteingang prüfen.",
+      "resetEmailFailed": "Senden fehlgeschlagen. Bitte später erneut versuchen."
+    },
+    "errors": {
+      "emailRequired": "Bitte E-Mail eingeben",
+      "emailInvalid": "Bitte gültige E-Mail eingeben",
+      "passwordRequired": "Bitte Passwort eingeben",
+      "passwordMinLength": "Passwort muss mindestens 6 Zeichen haben",
+      "confirmPasswordRequired": "Bitte Passwort bestätigen",
+      "termsRequired": "Bitte Nutzungsvereinbarung und Datenschutzrichtlinie akzeptieren",
+      "passwordMismatch": "Passwörter stimmen nicht überein"
+    }
+  },
+  "layout": {
+    "sidebar": {
+      "notebookList": "Hefte",
+      "inflectionGuide": "Deklinationsleitfaden",
+      "tutorial": "Anleitung",
+      "myNotebooks": "Meine Hefte",
+      "loginToViewNotebooks": "Anmelden, um Hefte zu sehen",
+      "loadFailed": "Laden fehlgeschlagen",
+      "noNotebooks": "Noch keine Hefte",
+      "newPage": "Neue Seite",
+      "creatingPage": "Seite wird erstellt...",
+      "vipMember": "VIP-Mitglied",
+      "freeTier": "Kostenlos",
+      "language": "Sprache"
+    },
+    "bottomNav": {
+      "home": "Start",
+      "guide": "Leitfaden",
+      "sheet": "Tabelle"
+    }
+  },
+  "notebooks": {
+    "title": "Meine Hefte",
+    "new": "Neu",
+    "newNotebook": "Neues Heft",
+    "notebookName": "Heftname",
+    "namePlaceholder": "Name eingeben",
+    "color": "Farbe",
+    "create": "Erstellen",
+    "creating": "Wird erstellt...",
+    "searchPlaceholder": "Hefte suchen",
+    "emptySearch": "Keine passenden Hefte",
+    "emptyList": "Noch keine Hefte. Tippen Sie auf „Neu“, um zu starten.",
+    "loginTitle": "Hefte nach Anmeldung verwalten",
+    "loginSubtitle": "Melden Sie sich an oder registrieren Sie sich, um Polnisch-Notizen zu erstellen.",
+    "goToLogin": "Zur Anmeldung",
+    "loadFailed": "Hefte konnten nicht geladen werden",
+    "cardMeta": "{{count}} Seiten · Aktualisiert {{date}}",
+    "guidePromoTitle": "Deklinationsleitfaden",
+    "guidePromoDescription": "Deklinationstabellen für polnische Substantive, Verben, Adjektive u. a.",
+    "emptyStateDescription": "Noch keine Seiten. Erstellen Sie die erste Seite für polnische Wörter und Deklinationen.",
+    "newPage": "Neue Seite",
+    "backToList": "Zur Heftliste",
+    "deleteTitle": "Heft löschen",
+    "deleteDescription": "„{{name}}“ löschen? Alle Seiten und Daten werden dauerhaft gelöscht.",
+    "toast": {
+      "createFailed": "Erstellen fehlgeschlagen. Bitte erneut versuchen.",
+      "loadSheetsFailed": "Seiten konnten nicht geladen werden",
+      "duplicateName": "Existiert bereits",
+      "renameFailed": "Umbenennen fehlgeschlagen",
+      "createPageFailed": "Seite konnte nicht erstellt werden",
+      "deleteFailedRestored": "Löschen fehlgeschlagen. Wiederhergestellt.",
+      "createFailedNetwork": "Erstellen fehlgeschlagen. Netzwerk prüfen oder später erneut versuchen."
+    },
+    "errors": {
+      "nameRequired": "Name darf nicht leer sein",
+      "duplicateName": "Existiert bereits",
+      "loadFailed": "Hefte konnten nicht geladen werden",
+      "sessionExpired": "Sitzung abgelaufen. Bitte erneut anmelden."
+    }
+  },
+  "sheet": {
+    "loading": "Wird geladen...",
+    "pageNotFound": "Seite nicht gefunden",
+    "pageLoadFailed": "Seite konnte nicht geladen werden",
+    "pageNotSpecified": "Keine Seite angegeben",
+    "untitledPage": "Unbenannte Seite",
+    "defaultNotebookName": "Mein Heft",
+    "toolbar": {
+      "addRow": "Zeile",
+      "addColumn": "Spalte",
+      "freeze": "Fixieren",
+      "select": "Auswählen",
+      "newPage": "Neue Seite"
+    },
+    "tabMenu": {
+      "duplicate": "Duplizieren",
+      "moveTo": "Verschieben nach",
+      "delete": "Löschen"
+    },
+    "deletePageTitle": "Seite löschen",
+    "deletePageDescription": "„{{title}}“ löschen? Diese Seite und alle Daten werden dauerhaft gelöscht.",
+    "deleteRowTitle": "Zeile löschen",
+    "deleteRowDescription": "Diese Zeile löschen? Alle Zellendaten werden dauerhaft gelöscht.",
+    "deleteColumnTitle": "Spalte löschen",
+    "deleteColumnDescription": "„{{column}}“ löschen? Alle Daten in dieser Spalte werden dauerhaft gelöscht.",
+    "moveDialog": {
+      "title": "In Heft verschieben",
+      "noTargets": "Keine anderen Hefte zum Verschieben"
+    },
+    "columnPicker": {
+      "title": "Wortform-Auswahl",
+      "addCustomNoteColumn": "Eigene Notizspalte hinzufügen",
+      "columnNamePlaceholder": "Spaltenname",
+      "add": "Hinzufügen",
+      "noPresetsForPos": "Für diese Wortart keine Deklinations-Spalten verfügbar"
+    },
+    "freeze": {
+      "title": "Fixier-Einstellungen",
+      "freezeRowsLabel": "Fixierte Zeilen (inkl. Kopfzeile)",
+      "freezeRowsHint": "Aktuell: {{count}} Zeilen (Standard 1 = Kopfzeile)",
+      "freezeColsLabel": "Fixierte Spalten (inkl. Übersetzungsspalte)",
+      "freezeColsHint": "Aktuell: {{count}} Spalten (max. {{max}}, Standard 1 = Übersetzungsspalte)",
+      "reset": "Fixierung aufheben",
+      "configTitle": "Fixier-Einstellungen",
+      "srOnly": "Fixieren"
+    },
+    "selection": {
+      "selectAll": "Alle auswählen",
+      "done": "Fertig",
+      "hide": "Ausblenden",
+      "show": "Einblenden"
+    },
+    "rowMenu": {
+      "srOnly": "Zeilenmenü",
+      "markRowColor": "Zeilenfarbe markieren",
+      "deleteRow": "Zeile löschen"
+    },
+    "columnMenu": {
+      "srOnly": "Spaltenmenü",
+      "hideColumn": "Spalte ausblenden",
+      "showColumn": "Spalte einblenden",
+      "deleteColumn": "Spalte löschen",
+      "notePlaceholder": "Notiz"
+    },
+    "markerColor": {
+      "title": "Markierungsfarbe",
+      "noColor": "Keine Farbe",
+      "fogBlue": "Nebelblau",
+      "grayGreen": "Graugrün",
+      "lotusPink": "Lotusrosa"
+    },
+    "ambiguity": {
+      "selectMeaning": "Bedeutung wählen",
+      "selectParadigm": "Deklinationsparadigma wählen",
+      "selectPos": "Wortart wählen",
+      "meaningDescription": "Dieses Wort hat mehrere Bedeutungen. Bitte wählen Sie die richtige.",
+      "paradigmDescription": "Dieses Wort hat mehrere Deklinationsparadigmen. Bitte wählen Sie die richtige.",
+      "posDescription": "Dieses Wort kann verschiedenen Wortarten angehören. Bitte wählen Sie die richtige.",
+      "wordPrefix": "„{{word}}“"
+    },
+    "columns": {
+      "translation": "Übersetzung",
+      "lemmaNomSg": "Lemma (Nom. Sg.)",
+      "nominativeSg": "Nominativ (Sg.)",
+      "noteDefault": "Notiz",
+      "alreadyAdded": "Bereits hinzugefügt"
+    },
+    "pos": {
+      "noun": "Substantiv",
+      "verb": "Verb",
+      "adjective": "Adjektiv",
+      "pronoun": "Pronomen",
+      "numeral": "Numerale",
+      "adverb": "Adverb",
+      "preposition": "Präposition",
+      "conjunction": "Konjunktion",
+      "custom": "Benutzerdefiniert"
+    },
+    "cases": {
+      "nominative_singular": "Nominativ Singular",
+      "genitive_singular": "Genitiv Singular",
+      "dative_singular": "Dativ Singular",
+      "accusative_singular": "Akkusativ Singular",
+      "instrumental_singular": "Instrumental Singular",
+      "locative_singular": "Lokativ Singular",
+      "vocative_singular": "Vokativ Singular",
+      "nominative_plural": "Nominativ Plural",
+      "genitive_plural": "Genitiv Plural",
+      "dative_plural": "Dativ Plural",
+      "accusative_plural": "Akkusativ Plural",
+      "instrumental_plural": "Instrumental Plural",
+      "locative_plural": "Lokativ Plural",
+      "vocative_plural": "Vokativ Plural",
+      "withGender": "{{label}} (m/w/s)"
+    },
+    "verbColumns": {
+      "verb_infinitive": "Infinitiv",
+      "verb_present_1sg": "Präsens · ich",
+      "verb_present_2sg": "Präsens · du",
+      "verb_present_3sg": "Präsens · er/sie/es",
+      "verb_present_1pl": "Präsens · wir",
+      "verb_present_2pl": "Präsens · ihr",
+      "verb_present_3pl": "Präsens · sie",
+      "verb_past_1sg": "Präteritum · ich",
+      "verb_past_2sg": "Präteritum · du",
+      "verb_past_3sg": "Präteritum · er/sie/es",
+      "verb_past_1pl": "Präteritum · wir",
+      "verb_past_2pl": "Präteritum · ihr",
+      "verb_past_3pl": "Präteritum · sie"
+    },
+    "toast": {
+      "enterWordFirst": "Bitte zuerst ein Wort in die Zelle eingeben",
+      "rowsLoadFailed": "Zeilendaten konnten nicht geladen werden",
+      "cellMarkerSaveFailed": "Zellenmarkierung konnte nicht gespeichert werden",
+      "rowMarkerSaveFailed": "Zeilenmarkierung konnte nicht gespeichert werden",
+      "rowOrderSaveFailed": "Zeilenreihenfolge konnte nicht gespeichert werden",
+      "addRowFailed": "Zeile konnte nicht hinzugefügt werden",
+      "deleteRowFailed": "Zeile konnte nicht gelöscht werden",
+      "columnConfigSaveFailed": "Spaltenkonfiguration konnte nicht gespeichert werden",
+      "deleteColumnFailed": "Spalte konnte nicht gelöscht werden",
+      "addColumnFailed": "Spalte konnte nicht hinzugefügt werden",
+      "freezeSaveFailed": "Fixier-Einstellungen konnten nicht gespeichert werden",
+      "createTabFailed": "Seite konnte nicht erstellt werden",
+      "renameFailed": "Umbenennen fehlgeschlagen",
+      "deleteTabFailed": "Seite konnte nicht gelöscht werden",
+      "duplicateTabFailed": "Seite konnte nicht dupliziert werden",
+      "moveTabFailed": "Seite konnte nicht verschoben werden",
+      "wordNotFound": "Wort nicht gefunden. Bitte manuell eingeben.",
+      "serviceUnavailable": "Dienst vorübergehend nicht verfügbar. Offline-Wörterbuch verwendet.",
+      "timeout": "Zeitüberschreitung. Bitte erneut versuchen.",
+      "slow": "Verarbeitung dauert. Bitte warten."
+    }
+  },
+  "settings": {
+    "title": "Einstellungen",
+    "sections": {
+      "dataManagement": "Datenverwaltung",
+      "legal": "Rechtliches",
+      "preferences": "Einstellungen",
+      "helpFeedback": "Hilfe & Feedback"
+    },
+    "clearCache": "Cache leeren",
+    "userAgreement": "Nutzungsvereinbarung",
+    "privacyPolicy": "Datenschutzrichtlinie",
+    "changeLanguage": "Sprache ändern",
+    "themeMode": "Design",
+    "feedback": "Feedback",
+    "aboutUs": "Über uns",
+    "contactEmail": "Kontakt-E-Mail",
+    "deleteAccount": "Konto löschen",
+    "logoutTitle": "Abmelden",
+    "logoutDescription": "Möchten Sie sich wirklich abmelden? Ungespeicherte Inhalte werden lokal zwischengespeichert.",
+    "logoutConfirm": "Abmelden",
+    "deleteAccountTitle": "Konto löschen",
+    "deleteAccountDescription": "Möchten Sie Ihr Konto wirklich löschen? Diese Aktion kann nicht rückgängig gemacht werden.",
+    "deleteAccountConfirm": "Löschen bestätigen",
+    "toast": {
+      "loggedOut": "Erfolgreich abgemeldet",
+      "aboutDescription": "Diese App wurde mit Sorgfalt von einem unabhängigen Entwickler erstellt. Vielen Dank für Ihre Unterstützung!",
+      "deleteAccountComingSoon": "Kontolöschung kommt bald. Bleiben Sie dran."
+    },
+    "cache": {
+      "title": "Cache leeren",
+      "description": "Löscht nur lokale temporäre Dateien. Cloud-Heftdaten sind nicht betroffen.",
+      "confirm": "Cache leeren",
+      "clearing": "Wird geleert...",
+      "freed": "{{size}} MB freigegeben"
+    },
+    "feedbackForm": {
+      "title": "Feedback",
+      "issueType": "Problemtyp",
+      "descriptionLabel": "Beschreibung (10–500 Zeichen)",
+      "descriptionPlaceholder": "Problem oder Vorschlag beschreiben",
+      "screenshotsLabel": "Screenshots (optional, max. 3, je 5 MB)",
+      "screenshotsSelected": "{{count}} ausgewählt",
+      "submit": "Feedback senden",
+      "types": {
+        "bug": "Fehler",
+        "rule": "Regelfehler",
+        "ux": "UX-Vorschlag",
+        "other": "Sonstiges"
+      },
+      "errors": {
+        "descriptionMin": "Beschreibung muss mindestens 10 Zeichen haben",
+        "descriptionMax": "Beschreibung darf 500 Zeichen nicht überschreiten",
+        "maxFiles": "Maximal {{max}} Screenshots",
+        "imagesOnly": "Nur Bilder",
+        "fileTooLarge": "Jedes Bild max. 5 MB"
+      },
+      "success": "Feedback erhalten. Wir antworten innerhalb von 3 Werktagen."
+    },
+    "account": { "upgradeVip": "VIP upgraden" },
+    "theme": { "light": "Hell", "dark": "Dunkel", "system": "System" },
+    "language": {
+      "zh-CN": "简体中文",
+      "en": "English",
+      "uk": "Українська",
+      "de": "Deutsch"
+    }
+  },
+  "vip": {
+    "title": "VIP upgraden",
+    "subtitle": "Alle Lernfunktionen ohne Limits freischalten",
+    "vipMember": "VIP-Mitglied",
+    "comparisonTitle": "Planvergleich",
+    "offlineMessage": "Sie sind offline. Bitte Verbindung prüfen.",
+    "backToSettings": "Zurück zu Einstellungen",
+    "paymentUnavailable": "Zahlungen in Ihrer Region nicht verfügbar. Bitte später erneut versuchen.",
+    "toast": { "upgradeSuccess": "Upgrade erfolgreich! Vielen Dank für Ihre Unterstützung." },
+    "plans": {
+      "free": "Kostenlos",
+      "vip": "VIP",
+      "recommended": "Empfohlen",
+      "lifetime": "Lebenslange Mitgliedschaft",
+      "price": "9,99 €"
+    },
+    "features": {
+      "free": {
+        "oneNotebook": "1 Heft",
+        "maxRows": "Bis zu 50 Wortzeilen",
+        "ads": "Werbung auf Funktionsseiten",
+        "noExport": "Kein Export"
+      },
+      "vip": {
+        "unlimitedNotebooks": "Unbegrenzte Hefte",
+        "unlimitedRows": "Unbegrenzte Zeilen",
+        "noAds": "Keine Werbung auf Funktionsseiten",
+        "export": "Bild / Excel exportieren"
+      }
+    }
+  },
+  "tutorial": {
+    "title": "Anleitung",
+    "subtitle": "Polnisch-Heft in 4 Schritten starten",
+    "prev": "Zurück",
+    "next": "Weiter",
+    "steps": {
+      "1": {
+        "title": "Heft erstellen",
+        "description": "Auf der Startseite „Neues Heft“ tippen, um polnischen Wortschatz zu organisieren. Jedes Heft kann mehrere Lernseiten enthalten.",
+        "placeholder": "Schritt 1: Heft erstellen"
+      },
+      "2": {
+        "title": "Seiten und Wörter hinzufügen",
+        "description": "Heft öffnen und Seite erstellen. Polnische Wörter in die Tabelle eingeben. Übersetzungs- und Deklinations-Spalten werden automatisch konfiguriert.",
+        "placeholder": "Schritt 2: Wörter hinzufügen"
+      },
+      "3": {
+        "title": "Deklination per Klick",
+        "description": "Auf „Generieren“ in einer Wortzelle klicken. Das System analysiert die Wortart und füllt Deklinationsformen und Übersetzung.",
+        "placeholder": "Schritt 3: Auto-Deklination"
+      },
+      "4": {
+        "title": "Mehrfachauswahl & Ein-/Ausblenden",
+        "description": "Auswahlmodus für Massen-Ein-/Ausblenden zum Selbsttest. Doppelklick auf Zelle zum schnellen Umschalten.",
+        "placeholder": "Schritt 4: Massen Ein-/Ausblenden"
+      }
+    }
+  },
+  "agreement": {
+    "userAgreement": "Nutzungsvereinbarung",
+    "privacyPolicy": "Datenschutzrichtlinie",
+    "legalDocument": "Rechtsdokument",
+    "loading": "Vertragsinhalt wird geladen...",
+    "placeholder": "Vollständiger Rechtstext wird demnächst veröffentlicht."
+  },
+  "guide": {
+    "title": "Deklinationsleitfaden",
+    "subtitle": "Referenztabellen für polnische Substantiv-, Adjektiv-, Pronomen-Deklination u. a.",
+    "translationHeader": "Übersetzung",
+    "personHeader": "Person",
+    "presentHeader": "Präsens",
+    "pastHeader": "Präteritum",
+    "verbExampleBadge": "Beispielverb: {{lemma}} ({{translation}})",
+    "singular": "Singular",
+    "plural": "Plural",
+    "posTabs": {
+      "noun": "Substantiv",
+      "adverb": "Adverb",
+      "adjective": "Adjektiv",
+      "pronoun": "Pronomen",
+      "numeral": "Numerale",
+      "verb": "Verb",
+      "preposition": "Präposition",
+      "conjunction": "Konjunktion"
+    },
+    "pronounSub": {
+      "personal": "Personalpronomen",
+      "demonstrative": "Demonstrativpronomen"
+    },
+    "numeralSub": {
+      "two_three_four": "2/3/4",
+      "five_plus": "5+",
+      "ordinal": "Ordinalzahlen"
+    },
+    "caseHeaders": {
+      "singular": {
+        "nom": "Nominativ Singular",
+        "gen": "Genitiv Singular",
+        "dat": "Dativ Singular",
+        "acc": "Akkusativ Singular",
+        "ins": "Instrumental Singular",
+        "loc": "Lokativ Singular",
+        "voc": "Vokativ Singular"
+      },
+      "plural": {
+        "nom": "Nominativ Plural",
+        "gen": "Genitiv Plural",
+        "dat": "Dativ Plural",
+        "acc": "Akkusativ Plural",
+        "ins": "Instrumental Plural",
+        "loc": "Lokativ Plural",
+        "voc": "Vokativ Plural"
+      }
+    },
+    "posDescriptions": {
+      "noun": "Substantive (rzeczownik) haben Genus (m/w/s) und Numerus (Sg/Pl) mit 7 Fällen.",
+      "adjective": "Adjektive (przymiotnik) stimmen in Genus, Numerus und Kasus überein.",
+      "pronoun": "Pronomen (zaimek): manche deklinieren wie Adjektive, andere haben Sonderformen.",
+      "numeral": "Numeralia (liczebnik): 2/3/4 wie Adjektive; 5+ wie Substantive.",
+      "verb": "Verben (czasownik) ändern sich nach Tempus, Person und Numerus; Präteritum unterscheidet Genus.",
+      "adverb": "Adverbien (przysłówek) sind undecklinierbar.",
+      "preposition": "Präpositionen (przyimek) sind undecklinierbar und verlangen bestimmte Fälle.",
+      "conjunction": "Konjunktionen (spójnik) sind undecklinierbar."
+    },
+    "cases": {
+      "nom": { "name": "Nominativ", "description": "Subjekt des Satzes", "exampleTranslation": "Das Haus ist groß." },
+      "gen": { "name": "Genitiv", "description": "Besitz, partitiv oder Negation", "exampleTranslation": "Es gibt keine Milch." },
+      "dat": { "name": "Dativ", "description": "Indirektes Objekt oder Richtung", "exampleTranslation": "Ich schenke Mama Blumen." },
+      "acc": { "name": "Akkusativ", "description": "Direktes Objekt oder Bewegungsrichtung", "exampleTranslation": "Ich sehe die Katze." },
+      "ins": { "name": "Instrumental", "description": "Instrument, Mittel oder Begleitung", "exampleTranslation": "Ich schreibe mit dem Stift." },
+      "loc": { "name": "Lokativ", "description": "Ort oder Position (oft mit w/na)", "exampleTranslation": "Ich wohne in Warschau." },
+      "voc": { "name": "Vokativ", "description": "Direkte Anrede", "exampleTranslation": "Anna, komm her!" }
+    },
+    "entries": {
+      "nouns": {
+        "kobieta": { "translation": "Frau", "label": "feminin f." },
+        "dom": { "translation": "Haus", "label": "maskulin m." },
+        "dziecko": { "translation": "Kind", "label": "neutrum n." }
+      },
+      "adjectives": {
+        "dobry": { "translation": "gut" },
+        "duzy": { "translation": "groß" },
+        "nowy": { "translation": "neu" }
+      },
+      "pronouns": {
+        "demonstrative": { "ten": { "translation": "dieser/diese/dieses" }, "tamten": { "translation": "jener/jene/jenes" } },
+        "personal": { "ja": { "translation": "ich" }, "ty": { "translation": "du" } }
+      },
+      "numerals": {
+        "234": {
+          "dwa": { "translation": "zwei" },
+          "trzy": { "translation": "drei" },
+          "cztery": { "translation": "vier" }
+        },
+        "fivePlus": { "piec": { "translation": "fünf" } },
+        "ordinal": {
+          "pierwszy": { "translation": "erste/r/s" },
+          "drugi": { "translation": "zweite/r/s" }
+        }
+      },
+      "verbs": {
+        "robic": {
+          "translation": "tun / machen",
+          "persons": {
+            "1sg": "ich (ja)",
+            "2sg": "du (ty)",
+            "3sg": "er/sie/es",
+            "1pl": "wir (my)",
+            "2pl": "ihr (wy)",
+            "3pl": "sie"
+          }
+        }
+      },
+      "invariable": {
+        "adverb": {
+          "time": {
+            "title": "Zeit",
+            "description": "Adverbien (przysłówek) sind undecklinierbar.",
+            "items": {
+              "dzis": "heute",
+              "jutro": "morgen",
+              "wczoraj": "gestern",
+              "teraz": "jetzt",
+              "juz": "schon",
+              "jeszcze": "noch",
+              "zawsze": "immer",
+              "nigdy": "nie",
+              "czesto": "oft",
+              "wkrotce": "bald"
+            }
+          },
+          "place": {
+            "title": "Ort",
+            "items": {
+              "tu_tutaj": "hier",
+              "tam": "dort",
+              "wszedzie": "überall",
+              "nigdzie": "nirgends",
+              "blisko": "nah",
+              "daleko": "weit",
+              "wewnatrz": "innen",
+              "na_zewnatrz": "außen",
+              "w_gore": "aufwärts",
+              "w_dol": "abwärts"
+            }
+          },
+          "degree": {
+            "title": "Grad",
+            "items": {
+              "bardzo": "sehr",
+              "troche": "ein wenig",
+              "calkiem": "ziemlich",
+              "dosc": "genug",
+              "za": "zu",
+              "mniej": "weniger",
+              "wiecej": "mehr",
+              "najbardziej": "am meisten",
+              "prawie": "fast",
+              "zupelnie": "völlig"
+            }
+          },
+          "manner": {
+            "title": "Art und Weise",
+            "items": {
+              "tak": "so",
+              "inaczej": "anders",
+              "razem": "zusammen",
+              "szybko": "schnell",
+              "wolno": "langsam",
+              "dobrze": "gut",
+              "zle": "schlecht",
+              "prosto": "direkt",
+              "osobno": "getrennt",
+              "naprawde": "wirklich"
+            }
+          }
+        },
+        "preposition": {
+          "common": {
+            "title": "Häufige Präpositionen",
+            "description": "Präpositionen (przyimek) sind undecklinierbar und verlangen Kasus.",
+            "items": {
+              "w": "in (+ LOC/AKK)",
+              "na": "auf (+ LOC/AKK)",
+              "do": "zu (+ GEN)",
+              "z": "von / mit (+ GEN/INS)",
+              "od": "von / seit (+ GEN)",
+              "po": "nach (+ LOC)",
+              "przed": "vor (+ INS/AKK)",
+              "za": "hinter (+ INS/AKK)",
+              "o": "über (+ LOC/AKK)",
+              "dla": "für (+ GEN)"
+            }
+          }
+        },
+        "conjunction": {
+          "common": {
+            "title": "Häufige Konjunktionen",
+            "description": "Konjunktionen (spójnik) sind undecklinierbar.",
+            "items": {
+              "i": "und",
+              "ale": "aber",
+              "lub": "oder",
+              "bo": "weil",
+              "ze": "dass",
+              "wiec": "also",
+              "jednak": "jedoch",
+              "albo": "oder",
+              "czy": "ob / oder",
+              "poniewaz": "weil"
+            }
+          }
+        }
+      }
+    }
+  }
+}

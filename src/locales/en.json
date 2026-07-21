@@ -1,0 +1,770 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "retry": "Retry",
+    "back": "Back",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "save": "Save",
+    "delete": "Delete",
+    "or": "or",
+    "creating": "Creating...",
+    "submitting": "Submitting...",
+    "permanentUse": "Lifetime access",
+    "openMenu": "Open menu",
+    "note": "Note",
+    "translation": "Translation",
+    "genderMfn": "m/f/n",
+    "emptyCell": "Empty cell",
+    "notAvailable": "—",
+    "stepIndicator": "Step {{current}} / {{total}}",
+    "stepAriaLabel": "Step {{step}}",
+    "selectedCount": "{{count}} selected",
+    "selectedWithActionable": "{{selected}} selected ({{actionable}} actionable)",
+    "pagesCount": "{{count}} pages",
+    "updatedAt": "Updated {{date}}",
+    "notebooksCount": "{{count}} Polish learning notebooks",
+    "cacheSizeMb": "{{size}} MB",
+    "versionShort": "v{{version}}",
+    "versionFull": "Version v{{version}}"
+  },
+  "auth": {
+    "login": "Log in",
+    "register": "Sign up",
+    "logout": "Log out",
+    "welcomeBack": "Welcome back",
+    "loginSubtitle": "Log in to continue your Polish learning",
+    "createAccount": "Create account",
+    "registerSubtitle": "Sign up to start your Polish learning journey",
+    "email": "Email address",
+    "password": "Password",
+    "confirmPassword": "Confirm password",
+    "rememberMe": "Remember me",
+    "forgotPassword": "Forgot password?",
+    "signInWithGoogle": "Sign in with Google",
+    "noAccount": "Don't have an account?",
+    "signUpFree": "Sign up for free",
+    "hasAccount": "Already have an account?",
+    "goToLogin": "Go to log in",
+    "termsPrefix": "By logging in, you agree to our",
+    "termsOfService": "Terms of Service",
+    "acceptedTermsPrefix": "I have read and agree to the",
+    "and": "and",
+    "privacyPolicy": "Privacy Policy",
+    "toast": {
+      "googleLoginFailed": "Google sign-in failed. Please try again.",
+      "loginSuccess": "Logged in successfully",
+      "wrongCredentials": "Incorrect email or password",
+      "registerSuccess": "Account created successfully",
+      "verifyEmailSent": "Please check your email to complete verification, then log in.",
+      "registerFailed": "Registration failed. Please try again.",
+      "enterEmailFirst": "Please enter your email address first",
+      "resetEmailSent": "Password reset email sent. Please check your inbox.",
+      "resetEmailFailed": "Failed to send email. Please try again later.",
+      "emailRateLimit": "Too many emails sent. Please wait a few minutes and try again.",
+      "emailNotConfirmed": "Please verify your email before logging in.",
+      "emailAlreadyRegistered": "This email is already registered. Try logging in instead."
+    },
+    "errors": {
+      "emailRequired": "Please enter your email",
+      "emailInvalid": "Please enter a valid email address",
+      "passwordRequired": "Please enter your password",
+      "passwordMinLength": "Password must be at least 6 characters",
+      "confirmPasswordRequired": "Please confirm your password",
+      "termsRequired": "Please read and agree to the Terms of Service and Privacy Policy",
+      "passwordMismatch": "Passwords do not match",
+      "notAuthenticated": "Please log in first",
+      "sessionExpired": "Session expired. Please log in again."
+    }
+  },
+  "layout": {
+    "sidebar": {
+      "notebookList": "Notebooks",
+      "inflectionGuide": "Inflection Guide",
+      "tutorial": "Tutorial",
+      "myNotebooks": "My Notebooks",
+      "loginToViewNotebooks": "Log in to view notebooks",
+      "loadFailed": "Failed to load",
+      "noNotebooks": "No notebooks yet",
+      "newPage": "New page",
+      "creatingPage": "Creating page?",
+      "vipMember": "VIP Member",
+      "freeTier": "Free",
+      "language": "Language"
+    },
+    "bottomNav": {
+      "home": "Home",
+      "guide": "Guide",
+      "sheet": "Sheet"
+    }
+  },
+  "notebooks": {
+    "title": "My Notebooks",
+    "new": "New",
+    "newNotebook": "New notebook",
+    "notebookName": "Notebook name",
+    "namePlaceholder": "Enter a name?",
+    "color": "Color",
+    "create": "Create",
+    "creating": "Creating?",
+    "searchPlaceholder": "Search notebooks?",
+    "emptySearch": "No matching notebooks",
+    "emptyList": "No notebooks yet. Tap \"New\" to get started.",
+    "loginTitle": "Manage notebooks after logging in",
+    "loginSubtitle": "Log in or sign up to create Polish learning notes.",
+    "goToLogin": "Go to log in",
+    "loadFailed": "Failed to load notebooks",
+    "cardMeta": "{{count}} pages · Updated {{date}}",
+    "guidePromoTitle": "Inflection Guide",
+    "guidePromoDescription": "View Polish noun, verb, adjective, and other inflection tables",
+    "emptyStateDescription": "No pages yet. Create your first page to start recording Polish words and inflections.",
+    "newPage": "New page",
+    "backToList": "Back to notebook list",
+    "deleteTitle": "Delete notebook",
+    "deleteDescription": "Delete \"{{name}}\"? All pages and data will be permanently deleted.",
+    "toast": {
+      "createFailed": "Failed to create. Please try again.",
+      "loadSheetsFailed": "Failed to load pages",
+      "duplicateName": "Already exists",
+      "renameFailed": "Failed to rename",
+      "createPageFailed": "Failed to create page",
+      "deleteFailedRestored": "Delete failed. Restored.",
+      "createFailedNetwork": "Failed to create. Check your network or try again later."
+    },
+    "errors": {
+      "nameRequired": "Name cannot be empty",
+      "duplicateName": "Already exists",
+      "loadFailed": "Failed to load notebooks",
+      "sessionExpired": "Session expired. Please log in again."
+    }
+  },
+  "sheet": {
+    "loading": "Loading...",
+    "pageNotFound": "Page not found",
+    "pageLoadFailed": "Failed to load page",
+    "pageNotSpecified": "No page specified",
+    "untitledPage": "Untitled page",
+    "defaultNotebookName": "My Notebook",
+    "toolbar": {
+      "addRow": "Row",
+      "addColumn": "Column",
+      "freeze": "Freeze",
+      "search": "Search",
+      "select": "Select",
+      "newPage": "New Page"
+    },
+    "search": {
+      "open": "Search in sheet",
+      "placeholder": "Search words or translations…",
+      "matchCount": "{{count}} matches found",
+      "noMatches": "No matches found",
+      "previous": "Previous match",
+      "next": "Next match",
+      "close": "Close search"
+    },
+    "export": {
+      "toolbar": {
+        "export": "Export"
+      },
+      "menu": {
+        "image": "Export as PNG",
+        "excel": "Export as Excel"
+      },
+      "image": {
+        "title": "Export image",
+        "description": "This table is taller than the visible area. Choose what to export.",
+        "visibleArea": "Visible area",
+        "fullTable": "Full table (multiple PNG files)",
+        "longPressHint": "Long-press the image to save if download did not start."
+      },
+      "toast": {
+        "excelSuccess": "Excel file downloaded",
+        "excelGenerating": "Generating Excel file…",
+        "imageSuccess": "Image exported",
+        "imagePages": "{{count}} images exported",
+        "failed": "Export failed",
+        "tooManyRows": "Large sheet — generating file, please wait…"
+      }
+    },
+    "tabMenu": {
+      "duplicate": "Duplicate",
+      "moveTo": "Move to",
+      "delete": "Delete"
+    },
+    "deletePageTitle": "Delete page",
+    "deletePageDescription": "Delete \"{{title}}\"? This page and all its data will be permanently deleted.",
+    "deleteRowTitle": "Delete row",
+    "deleteRowDescription": "Delete this row? All cell data will be permanently deleted.",
+    "deleteColumnTitle": "Delete column",
+    "deleteColumnDescription": "Delete \"{{column}}\"? All data in this column will be permanently deleted.",
+    "moveDialog": {
+      "title": "Move to notebook",
+      "noTargets": "No other notebooks to move to"
+    },
+    "columnPicker": {
+      "title": "Word Form Selector",
+      "addCustomNoteColumn": "Add custom note column",
+      "columnNamePlaceholder": "Column name?",
+      "add": "Add",
+      "noPresetsForPos": "No inflection columns available for this part of speech"
+    },
+    "freeze": {
+      "title": "Freeze settings",
+      "freezeRowsLabel": "Frozen rows (including header)",
+      "freezeRowsHint": "Current: {{count}} rows (default 1 = header row)",
+      "freezeColsLabel": "Frozen columns (including translation column)",
+      "freezeColsHint": "Current: {{count}} columns (max {{max}}, default 1 = translation column)",
+      "reset": "Unfreeze",
+      "configTitle": "Freeze settings",
+      "srOnly": "Freeze"
+    },
+    "selection": {
+      "selectAll": "Select all",
+      "done": "Done",
+      "hide": "Hide",
+      "show": "Show"
+    },
+    "rowMenu": {
+      "srOnly": "Row menu",
+      "markRowColor": "Mark row color",
+      "deleteRow": "Delete row"
+    },
+    "columnMenu": {
+      "srOnly": "Column menu",
+      "hideColumn": "Hide column",
+      "showColumn": "Show column",
+      "deleteColumn": "Delete column",
+      "notePlaceholder": "Note"
+    },
+    "markerColor": {
+      "title": "Marker color",
+      "noColor": "No color",
+      "fogBlue": "Fog blue",
+      "grayGreen": "Gray-green",
+      "lotusPink": "Lotus pink"
+    },
+    "cell": {
+      "aiGenerated": "AI",
+      "aiTooltip": "Generated by AI, for reference only"
+    },
+    "ambiguity": {
+      "selectMeaning": "Select meaning",
+      "selectParadigm": "Select inflection paradigm",
+      "selectPos": "Select part of speech",
+      "meaningDescription": "This word has multiple possible meanings. Please select the correct one.",
+      "paradigmDescription": "This word has multiple inflection paradigms. Please select the correct one.",
+      "posDescription": "This word may belong to different parts of speech. Please select the correct one.",
+      "wordPrefix": "\"{{word}}\""
+    },
+    "columns": {
+      "translation": "Translation",
+      "lemmaNomSg": "Lemma (Nom. sg.)",
+      "nominativeSg": "Nominative (sg.)",
+      "noteDefault": "Note",
+      "alreadyAdded": "Already added"
+    },
+    "pos": {
+      "noun": "Noun",
+      "verb": "Verb",
+      "adjective": "Adjective",
+      "pronoun": "Pronoun",
+      "numeral": "Numeral",
+      "adverb": "Adverb",
+      "preposition": "Preposition",
+      "conjunction": "Conjunction",
+      "custom": "Custom"
+    },
+    "cases": {
+      "nominative_singular": "Singular nominative",
+      "genitive_singular": "Singular genitive",
+      "dative_singular": "Singular dative",
+      "accusative_singular": "Singular accusative",
+      "instrumental_singular": "Singular instrumental",
+      "locative_singular": "Singular locative",
+      "vocative_singular": "Singular vocative",
+      "nominative_plural": "Plural nominative",
+      "genitive_plural": "Plural genitive",
+      "dative_plural": "Plural dative",
+      "accusative_plural": "Plural accusative",
+      "instrumental_plural": "Plural instrumental",
+      "locative_plural": "Plural locative",
+      "vocative_plural": "Plural vocative",
+      "withGender": "{{label}} (m/f/n)"
+    },
+    "verbColumns": {
+      "verb_infinitive": "Infinitive",
+      "verb_present_1sg": "Present · I",
+      "verb_present_2sg": "Present · you (sg.)",
+      "verb_present_3sg": "Present · he/she/it",
+      "verb_present_1pl": "Present · we",
+      "verb_present_2pl": "Present · you (pl.)",
+      "verb_present_3pl": "Present · they",
+      "verb_past_1sg": "Past · I",
+      "verb_past_2sg": "Past · you (sg.)",
+      "verb_past_3sg": "Past · he/she/it",
+      "verb_past_1pl": "Past · we",
+      "verb_past_2pl": "Past · you (pl.)",
+      "verb_past_3pl": "Past · they"
+    },
+    "toast": {
+      "enterWordFirst": "Please enter a word in the cell first",
+      "rowsLoadFailed": "Failed to load row data",
+      "cellMarkerSaveFailed": "Failed to save cell marker",
+      "rowMarkerSaveFailed": "Failed to save row marker",
+      "rowOrderSaveFailed": "Failed to save row order",
+      "addRowFailed": "Failed to add row",
+      "deleteRowFailed": "Failed to delete row",
+      "columnConfigSaveFailed": "Failed to save column configuration",
+      "deleteColumnFailed": "Failed to delete column",
+      "addColumnFailed": "Failed to add column",
+      "freezeSaveFailed": "Failed to save freeze settings",
+      "createTabFailed": "Failed to create page",
+      "renameFailed": "Failed to rename",
+      "deleteTabFailed": "Failed to delete page",
+      "duplicateTabFailed": "Failed to duplicate page",
+      "moveTabFailed": "Failed to move page",
+      "wordNotFound": "Word not found. Please enter manually.",
+      "serviceUnavailable": "Service temporarily unavailable. Offline dictionary used.",
+      "timeout": "Request timed out. Please try again.",
+      "slow": "Processing is slow. Please wait."
+    }
+  },
+  "settings": {
+    "title": "Settings",
+    "sections": {
+      "dataManagement": "Data management",
+      "legal": "Legal",
+      "preferences": "Preferences",
+      "helpFeedback": "Help & feedback",
+      "dangerZone": "Danger zone"
+    },
+    "clearCache": "Clear cache",
+    "termsOfService": "Terms of Service",
+    "privacyPolicy": "Privacy Policy",
+    "changeLanguage": "Change language",
+    "themeMode": "Theme",
+    "feedback": "Feedback",
+    "aboutUs": "About us",
+    "contactEmail": "Contact email",
+    "deleteAccount": "Delete account",
+    "logoutTitle": "Log out",
+    "logoutDescription": "Are you sure you want to log out? Unsaved content will be cached locally.",
+    "logoutConfirm": "Log out",
+    "deleteAccountTitle": "Delete account",
+    "deleteAccountDescription": "This will permanently delete all notebooks, pages, and row data. This action cannot be undone.",
+    "deleteAccountConfirm": "Confirm deletion",
+    "deleteAccountTypePrompt": "Type \"{{word}}\" below to confirm:",
+    "deleteAccountConfirmWord": "DELETE",
+    "deleteAccountDeleting": "Deleting account...",
+    "toast": {
+      "loggedOut": "Logged out successfully",
+      "aboutDescription": "This app is built with care by an independent developer. Thank you for your support!",
+      "deleteAccountSuccess": "Account deleted successfully",
+      "deleteAccountFailed": "Failed to delete account. Please try again later."
+    },
+    "cache": {
+      "title": "Clear cache",
+      "description": "Clears local temporary files only. Cloud notebook data is not affected.",
+      "confirm": "Clear cache",
+      "clearing": "Clearing...",
+      "freed": "Freed {{size}} MB"
+    },
+    "feedbackForm": {
+      "title": "Feedback",
+      "issueType": "Issue type",
+      "descriptionLabel": "Description (10–500 characters)",
+      "descriptionPlaceholder": "Describe the issue or suggestion?",
+      "screenshotsLabel": "Screenshots (optional, up to 3, max 5 MB each)",
+      "screenshotsSelected": "{{count}} selected",
+      "submit": "Submit feedback",
+      "types": {
+        "bug": "Bug",
+        "rule": "Rule error",
+        "ux": "UX suggestion",
+        "other": "Other"
+      },
+      "errors": {
+        "descriptionMin": "Description must be at least 10 characters",
+        "descriptionMax": "Description cannot exceed 500 characters",
+        "maxFiles": "You can upload up to {{max}} screenshots",
+        "imagesOnly": "Images only",
+        "fileTooLarge": "Each image must be 5 MB or less"
+      },
+      "success": "Feedback received. We will reply within 3 business days."
+    },
+    "account": {
+      "upgradeVip": "Upgrade to VIP"
+    },
+    "theme": {
+      "light": "Light",
+      "dark": "Dark",
+      "system": "System"
+    },
+    "language": {
+      "zh-CN": "简体中文",
+      "en": "English",
+      "uk": "Українська",
+      "de": "Deutsch"
+    }
+  },
+  "vip": {
+    "title": "Upgrade to VIP",
+    "subtitle": "Unlock all learning features with unlimited use",
+    "vipMember": "VIP Member",
+    "comparisonTitle": "Plan comparison",
+    "offlineMessage": "You are offline. Please check your connection.",
+    "backToSettings": "Back to settings",
+    "paymentUnavailable": "Payments are not available in your region. Please try again later.",
+    "mockPay": "Simulate payment success (dev)",
+    "paymentRedirectHint": "Real payments coming soon. Use the mock payment button below for testing.",
+    "rowLimit": {
+      "title": "Free row limit reached",
+      "description": "You have reached the free plan limit of 50 rows. Upgrade to VIP for unlimited rows.",
+      "currentCount": "Currently using {{count}} / {{limit}} rows",
+      "upgrade": "Upgrade to VIP",
+      "countFailed": "Could not check row limit. Please try again."
+    },
+    "toast": {
+      "upgradeSuccess": "Upgrade successful! Thank you for your support.",
+      "upgradeFailed": "Upgrade failed. Please try again."
+    },
+    "plans": {
+      "free": "Free",
+      "vip": "VIP",
+      "recommended": "Recommended",
+      "lifetime": "Lifetime membership",
+      "price": "14.99 USD"
+    },
+    "features": {
+      "free": {
+        "oneNotebook": "1 notebook",
+        "maxRows": "Up to 50 word rows",
+        "ads": "Ads on feature pages",
+        "noExport": "No export"
+      },
+      "vip": {
+        "unlimitedNotebooks": "Unlimited notebooks",
+        "unlimitedRows": "Unlimited rows",
+        "noAds": "No ads on feature pages",
+        "export": "Export image / Excel"
+      }
+    }
+  },
+  "tutorial": {
+    "title": "Tutorial",
+    "subtitle": "Get started with PolishMate in 5 steps",
+    "prev": "Previous",
+    "next": "Next",
+    "steps": {
+      "1": {
+        "title": "Create a notebook",
+        "description": "On the home page, tap \"New notebook\", give it a name, and pick a color you like for easy identification."
+      },
+      "2": {
+        "title": "Add pages & words, one-click inflection and translation",
+        "description": "Open a notebook and create a page. Choose the inflection or conjugation columns you want (custom note columns supported). After entering a word, click \"✨ Generate\" to auto-fill all inflections and translation. AI-filled content shows an \"AI\" badge."
+      },
+      "3": {
+        "title": "Select hide/show",
+        "description": "Enter selection mode to bulk hide/show cells for self-testing. Double-click a cell to quickly toggle hidden state."
+      },
+      "4": {
+        "title": "Spreadsheet editing",
+        "description": "1. Click \"🔍\" to search words — all matches are highlighted; use up/down navigation to jump quickly. 2. Export to Excel or image for printing, sharing, or backup. 3. Highlight individual cells or entire rows."
+      },
+      "5": {
+        "title": "Language switching",
+        "description": "Supports 4 UI languages (Chinese, English, Ukrainian, German). After switching, all text, table column names, and translations for newly added words update together."
+      }
+    }
+  },
+  "agreement": {
+    "termsOfService": "Terms of Service",
+    "privacyPolicy": "Privacy Policy",
+    "legalDocument": "Legal document",
+    "loading": "Loading agreement content...",
+    "placeholder": "Full legal text will be published here soon."
+  },
+  "guide": {
+    "title": "Inflection Guide",
+    "subtitle": "Reference tables for Polish noun, adjective, pronoun, and other inflection",
+    "translationHeader": "Translation",
+    "personHeader": "Person",
+    "presentHeader": "Present",
+    "pastHeader": "Past",
+    "verbExampleBadge": "Example verb: {{lemma}} ({{translation}})",
+    "singular": "Singular",
+    "plural": "Plural",
+    "posTabs": {
+      "noun": "Noun",
+      "adverb": "Adverb",
+      "adjective": "Adjective",
+      "pronoun": "Pronoun",
+      "numeral": "Numeral",
+      "verb": "Verb",
+      "preposition": "Preposition",
+      "conjunction": "Conjunction"
+    },
+    "pronounSub": {
+      "personal": "Personal pronouns",
+      "demonstrative": "Demonstrative pronouns"
+    },
+    "numeralSub": {
+      "two_three_four": "2/3/4",
+      "five_plus": "5+",
+      "ordinal": "Ordinal numerals"
+    },
+    "caseHeaders": {
+      "singular": {
+        "nom": "Singular nominative",
+        "gen": "Singular genitive",
+        "dat": "Singular dative",
+        "acc": "Singular accusative",
+        "ins": "Singular instrumental",
+        "loc": "Singular locative",
+        "voc": "Singular vocative"
+      },
+      "plural": {
+        "nom": "Plural nominative",
+        "gen": "Plural genitive",
+        "dat": "Plural dative",
+        "acc": "Plural accusative",
+        "ins": "Plural instrumental",
+        "loc": "Plural locative",
+        "voc": "Plural vocative"
+      }
+    },
+    "posDescriptions": {
+      "noun": "Nouns (rzeczownik) have gender (m/f/n) and number (sg/pl) with 7 cases.",
+      "adjective": "Adjectives (przymiotnik) agree in gender, number, and case.",
+      "pronoun": "Pronouns (zaimek): some inflect like adjectives; others have special forms.",
+      "numeral": "Numerals (liczebnik): 2/3/4 inflect like adjectives; 5+ like nouns.",
+      "verb": "Verbs (czasownik) change by tense, person, and number; past tense distinguishes gender.",
+      "adverb": "Adverbs (przysłówek) are invariable.",
+      "preposition": "Prepositions (przyimek) are invariable and require specific cases.",
+      "conjunction": "Conjunctions (spójnik) are invariable."
+    },
+    "cases": {
+      "nom": {
+        "name": "Nominative",
+        "description": "Subject of the sentence",
+        "exampleTranslation": "The house is big."
+      },
+      "gen": {
+        "name": "Genitive",
+        "description": "Possession, partitive, or negation",
+        "exampleTranslation": "There is no milk."
+      },
+      "dat": {
+        "name": "Dative",
+        "description": "Indirect object or direction of action",
+        "exampleTranslation": "I give flowers to Mom."
+      },
+      "acc": {
+        "name": "Accusative",
+        "description": "Direct object or direction of motion",
+        "exampleTranslation": "I see the cat."
+      },
+      "ins": {
+        "name": "Instrumental",
+        "description": "Instrument, means, or accompaniment",
+        "exampleTranslation": "I write with a pen."
+      },
+      "loc": {
+        "name": "Locative",
+        "description": "Location or position (often with w/na)",
+        "exampleTranslation": "I live in Warsaw."
+      },
+      "voc": {
+        "name": "Vocative",
+        "description": "Direct address",
+        "exampleTranslation": "Anna, come here!"
+      }
+    },
+    "entries": {
+      "nouns": {
+        "kobieta": {
+          "translation": "woman",
+          "label": "feminine f."
+        },
+        "dom": {
+          "translation": "house",
+          "label": "masculine m."
+        },
+        "dziecko": {
+          "translation": "child",
+          "label": "neuter n."
+        }
+      },
+      "adjectives": {
+        "dobry": {
+          "translation": "good"
+        },
+        "duzy": {
+          "translation": "big"
+        },
+        "nowy": {
+          "translation": "new"
+        }
+      },
+      "pronouns": {
+        "demonstrative": {
+          "ten": {
+            "translation": "this"
+          },
+          "tamten": {
+            "translation": "that"
+          }
+        },
+        "personal": {
+          "ja": {
+            "translation": "I"
+          },
+          "ty": {
+            "translation": "you"
+          }
+        }
+      },
+      "numerals": {
+        "234": {
+          "dwa": {
+            "translation": "two"
+          },
+          "trzy": {
+            "translation": "three"
+          },
+          "cztery": {
+            "translation": "four"
+          }
+        },
+        "fivePlus": {
+          "piec": {
+            "translation": "five"
+          }
+        },
+        "ordinal": {
+          "pierwszy": {
+            "translation": "first"
+          },
+          "drugi": {
+            "translation": "second"
+          }
+        }
+      },
+      "verbs": {
+        "robic": {
+          "translation": "to do / make",
+          "persons": {
+            "1sg": "I (ja)",
+            "2sg": "you (ty)",
+            "3sg": "he/she/it",
+            "1pl": "we (my)",
+            "2pl": "you (wy)",
+            "3pl": "they"
+          }
+        }
+      },
+      "invariable": {
+        "adverb": {
+          "time": {
+            "title": "Time",
+            "description": "Adverbs (przysłówek) are invariable.",
+            "items": {
+              "dzis": "today",
+              "jutro": "tomorrow",
+              "wczoraj": "yesterday",
+              "teraz": "now",
+              "juz": "already",
+              "jeszcze": "still / yet",
+              "zawsze": "always",
+              "nigdy": "never",
+              "czesto": "often",
+              "wkrotce": "soon"
+            }
+          },
+          "place": {
+            "title": "Place",
+            "items": {
+              "tu_tutaj": "here",
+              "tam": "there",
+              "wszedzie": "everywhere",
+              "nigdzie": "nowhere",
+              "blisko": "near",
+              "daleko": "far",
+              "wewnatrz": "inside",
+              "na_zewnatrz": "outside",
+              "w_gore": "upward",
+              "w_dol": "downward"
+            }
+          },
+          "degree": {
+            "title": "Degree",
+            "items": {
+              "bardzo": "very",
+              "troche": "a little",
+              "calkiem": "quite",
+              "dosc": "enough",
+              "za": "too / overly",
+              "mniej": "less",
+              "wiecej": "more",
+              "najbardziej": "most",
+              "prawie": "almost",
+              "zupelnie": "completely"
+            }
+          },
+          "manner": {
+            "title": "Manner",
+            "items": {
+              "tak": "so / this way",
+              "inaczej": "differently",
+              "razem": "together",
+              "szybko": "quickly",
+              "wolno": "slowly",
+              "dobrze": "well",
+              "zle": "badly",
+              "prosto": "directly",
+              "osobno": "separately",
+              "naprawde": "really"
+            }
+          }
+        },
+        "preposition": {
+          "common": {
+            "title": "Common prepositions",
+            "description": "Prepositions (przyimek) are invariable and require case agreement.",
+            "items": {
+              "w": "in (+ LOC/ACC)",
+              "na": "on (+ LOC/ACC)",
+              "do": "to (+ GEN)",
+              "z": "from / with (+ GEN/INS)",
+              "od": "from / since (+ GEN)",
+              "po": "after (+ LOC)",
+              "przed": "before (+ INS/ACC)",
+              "za": "behind (+ INS/ACC)",
+              "o": "about (+ LOC/ACC)",
+              "dla": "for (+ GEN)"
+            }
+          }
+        },
+        "conjunction": {
+          "common": {
+            "title": "Common conjunctions",
+            "description": "Conjunctions (spójnik) are invariable.",
+            "items": {
+              "i": "and",
+              "ale": "but",
+              "lub": "or",
+              "bo": "because",
+              "ze": "that (subordinator)",
+              "wiec": "so / therefore",
+              "jednak": "however",
+              "albo": "or",
+              "czy": "whether / or",
+              "poniewaz": "because"
+            }
+          }
+        }
+      }
+    }
+  }
+}

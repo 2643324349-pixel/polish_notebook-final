@@ -1,0 +1,9 @@
+export { LoginPage } from './LoginPage';
+export { NotebooksPage } from './NotebooksPage';
+export { SheetPage } from './SheetPage';
+export { GuidePage } from './GuidePage';
+export { DevInflectionTestPage } from './DevInflectionTestPage';
+export { SettingsPage } from './SettingsPage';
+export { VipPage } from './VipPage';
+export { TutorialPage } from './TutorialPage';
+export { AgreementPage } from './AgreementPage';

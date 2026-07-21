@@ -1,0 +1,633 @@
+{
+  "common": {
+    "loading": "Завантаження...",
+    "retry": "Повторити",
+    "back": "Назад",
+    "cancel": "Скасувати",
+    "confirm": "Підтвердити",
+    "save": "Зберегти",
+    "delete": "Видалити",
+    "or": "або",
+    "creating": "Створення...",
+    "submitting": "Надсилання...",
+    "permanentUse": "Довічний доступ",
+    "openMenu": "Відкрити меню",
+    "note": "Примітка",
+    "translation": "Переклад",
+    "genderMfn": "ч/ж/с",
+    "emptyCell": "Порожня комірка",
+    "notAvailable": "—",
+    "stepIndicator": "Крок {{current}} / {{total}}",
+    "stepAriaLabel": "Крок {{step}}",
+    "selectedCount": "Обрано {{count}}",
+    "selectedWithActionable": "Обрано {{selected}} ({{actionable}} доступно)",
+    "pagesCount": "{{count}} сторінок",
+    "updatedAt": "Оновлено {{date}}",
+    "notebooksCount": "{{count}} зошитів для вивчення польської",
+    "cacheSizeMb": "{{size}} МБ",
+    "versionShort": "v{{version}}",
+    "versionFull": "Версія v{{version}}"
+  },
+  "auth": {
+    "login": "Увійти",
+    "register": "Зареєструватися",
+    "logout": "Вийти",
+    "welcomeBack": "З поверненням",
+    "loginSubtitle": "Увійдіть, щоб продовжити вивчення польської",
+    "createAccount": "Створити обліковий запис",
+    "registerSubtitle": "Зареєструйтеся, щоб почати вивчати польську",
+    "email": "Електронна пошта",
+    "password": "Пароль",
+    "confirmPassword": "Підтвердіть пароль",
+    "rememberMe": "Запам'ятати мене",
+    "forgotPassword": "Забули пароль?",
+    "signInWithGoogle": "Увійти через Google",
+    "noAccount": "Немає облікового запису?",
+    "signUpFree": "Зареєструватися безкоштовно",
+    "hasAccount": "Вже є обліковий запис?",
+    "goToLogin": "Перейти до входу",
+    "termsPrefix": "Входячи, ви погоджуєтеся з нашими",
+    "termsOfService": "Умовами використання",
+    "acceptedTermsPrefix": "Я прочитав(ла) і погоджуюся з",
+    "userAgreement": "Угодою користувача",
+    "and": "та",
+    "privacyPolicy": "Політикою конфіденційності",
+    "toast": {
+      "googleLoginFailed": "Помилка входу через Google. Спробуйте ще раз.",
+      "loginSuccess": "Успішний вхід",
+      "wrongCredentials": "Невірна електронна пошта або пароль",
+      "registerSuccess": "Обліковий запис створено",
+      "registerFailed": "Помилка реєстрації. Спробуйте ще раз.",
+      "enterEmailFirst": "Спочатку введіть електронну пошту",
+      "resetEmailSent": "Лист для скидання пароля надіслано. Перевірте пошту.",
+      "resetEmailFailed": "Не вдалося надіслати. Спробуйте пізніше."
+    },
+    "errors": {
+      "emailRequired": "Введіть електронну пошту",
+      "emailInvalid": "Введіть дійсну електронну пошту",
+      "passwordRequired": "Введіть пароль",
+      "passwordMinLength": "Пароль має містити щонайменше 6 символів",
+      "confirmPasswordRequired": "Підтвердіть пароль",
+      "termsRequired": "Прочитайте та прийміть Угоду користувача та Політику конфіденційності",
+      "passwordMismatch": "Паролі не збігаються"
+    }
+  },
+  "layout": {
+    "sidebar": {
+      "notebookList": "Зошити",
+      "inflectionGuide": "Довідник відмінювань",
+      "tutorial": "Посібник",
+      "myNotebooks": "Мої зошити",
+      "loginToViewNotebooks": "Увійдіть, щоб переглянути зошити",
+      "loadFailed": "Помилка завантаження",
+      "noNotebooks": "Ще немає зошитів",
+      "newPage": "Нова сторінка",
+      "creatingPage": "Створення сторінки...",
+      "vipMember": "VIP-учасник",
+      "freeTier": "Безкоштовно",
+      "language": "Мова"
+    },
+    "bottomNav": {
+      "home": "Головна",
+      "guide": "Довідник",
+      "sheet": "Таблиця"
+    }
+  },
+  "notebooks": {
+    "title": "Мої зошити",
+    "new": "Новий",
+    "newNotebook": "Новий зошит",
+    "notebookName": "Назва зошита",
+    "namePlaceholder": "Введіть назву",
+    "color": "Колір",
+    "create": "Створити",
+    "creating": "Створення...",
+    "searchPlaceholder": "Пошук зошитів",
+    "emptySearch": "Немає відповідних зошитів",
+    "emptyList": "Ще немає зошитів. Натисніть «Новий», щоб почати.",
+    "loginTitle": "Керуйте зошитами після входу",
+    "loginSubtitle": "Увійдіть або зареєструйтеся, щоб створювати нотатки з польської.",
+    "goToLogin": "Перейти до входу",
+    "loadFailed": "Не вдалося завантажити зошити",
+    "cardMeta": "{{count}} сторінок · Оновлено {{date}}",
+    "guidePromoTitle": "Довідник відмінювань",
+    "guidePromoDescription": "Таблиці відмінювань польських іменників, дієслів, прикметників тощо",
+    "emptyStateDescription": "Ще немає сторінок. Створіть першу сторінку для запису польських слів і відмінювань.",
+    "newPage": "Нова сторінка",
+    "backToList": "Назад до списку зошитів",
+    "deleteTitle": "Видалити зошит",
+    "deleteDescription": "Видалити «{{name}}»? Усі сторінки та дані будуть видалені назавжди.",
+    "toast": {
+      "createFailed": "Не вдалося створити. Спробуйте ще раз.",
+      "loadSheetsFailed": "Не вдалося завантажити сторінки",
+      "duplicateName": "Вже існує",
+      "renameFailed": "Не вдалося перейменувати",
+      "createPageFailed": "Не вдалося створити сторінку",
+      "deleteFailedRestored": "Помилка видалення. Відновлено.",
+      "createFailedNetwork": "Не вдалося створити. Перевірте мережу або спробуйте пізніше."
+    },
+    "errors": {
+      "nameRequired": "Назва не може бути порожньою",
+      "duplicateName": "Вже існує",
+      "loadFailed": "Не вдалося завантажити зoshити",
+      "sessionExpired": "Сесію завершено. Увійдіть знову."
+    }
+  },
+  "sheet": {
+    "loading": "Завантаження...",
+    "pageNotFound": "Сторінку не знайдено",
+    "pageLoadFailed": "Не вдалося завантажити сторінку",
+    "pageNotSpecified": "Сторінку не вказано",
+    "untitledPage": "Без назви",
+    "defaultNotebookName": "Мій зошит",
+    "toolbar": {
+      "addRow": "Рядок",
+      "addColumn": "Стовпець",
+      "freeze": "Закріпити",
+      "select": "Вибрати",
+      "newPage": "Нова сторінка"
+    },
+    "tabMenu": {
+      "duplicate": "Дублювати",
+      "moveTo": "Перемістити",
+      "delete": "Видалити"
+    },
+    "deletePageTitle": "Видалити сторінку",
+    "deletePageDescription": "Видалити «{{title}}»? Цю сторінку та всі дані буде видалено назавжди.",
+    "deleteRowTitle": "Видалити рядок",
+    "deleteRowDescription": "Видалити цей рядок? Усі дані комірок буде видалено назавжди.",
+    "deleteColumnTitle": "Видалити стовпець",
+    "deleteColumnDescription": "Видалити «{{column}}»? Усі дані в цьому стовпці буде видалено назавжди.",
+    "moveDialog": {
+      "title": "Перемістити до зoshита",
+      "noTargets": "Немає інших зoshитів для переміщення"
+    },
+    "columnPicker": {
+      "title": "Вибір словоформ",
+      "addCustomNoteColumn": "Додати примітку",
+      "columnNamePlaceholder": "Назва стовпця",
+      "add": "Додати",
+      "noPresetsForPos": "Для цієї частини мови немає стовпців відмінювань"
+    },
+    "freeze": {
+      "title": "Налаштування закріплення",
+      "freezeRowsLabel": "Закріплені рядки (включно з заголовком)",
+      "freezeRowsHint": "Зараз: {{count}} рядків (за замовчуванням 1 = заголовок)",
+      "freezeColsLabel": "Закріплені стовпці (включно з перекладом)",
+      "freezeColsHint": "Зараз: {{count}} стовпців (макс. {{max}}, за замовчуванням 1 = переклад)",
+      "reset": "Зняти закріплення",
+      "configTitle": "Налаштування закріплення",
+      "srOnly": "Закріпити"
+    },
+    "selection": {
+      "selectAll": "Вибрати все",
+      "done": "Готово",
+      "hide": "Приховати",
+      "show": "Показати"
+    },
+    "rowMenu": {
+      "srOnly": "Меню рядка",
+      "markRowColor": "Позначити колір рядка",
+      "deleteRow": "Видалити рядок"
+    },
+    "columnMenu": {
+      "srOnly": "Меню стовпця",
+      "hideColumn": "Приховати стовпець",
+      "showColumn": "Показати стовпець",
+      "deleteColumn": "Видалити стовпець",
+      "notePlaceholder": "Примітка"
+    },
+    "markerColor": {
+      "title": "Колір позначки",
+      "noColor": "Без кольору",
+      "fogBlue": "Туманно-блакитний",
+      "grayGreen": "Сіро-зелений",
+      "lotusPink": "Лотосово-рожевий"
+    },
+    "ambiguity": {
+      "selectMeaning": "Вибрати значення",
+      "selectParadigm": "Вибрати парадигму відмінювання",
+      "selectPos": "Вибрати частину мови",
+      "meaningDescription": "Це слово має кілька можливих значень. Виберіть правильне.",
+      "paradigmDescription": "Це слово має кілька парадигм відмінювання. Виберіть правильну.",
+      "posDescription": "Це слово може належати до різних частин мови. Виберіть правильну.",
+      "wordPrefix": "«{{word}}»"
+    },
+    "columns": {
+      "translation": "Переклад",
+      "lemmaNomSg": "Лема (наз. одн.)",
+      "nominativeSg": "Називний (одн.)",
+      "noteDefault": "Примітка",
+      "alreadyAdded": "Вже додано"
+    },
+    "pos": {
+      "noun": "Іменник",
+      "verb": "Дієслово",
+      "adjective": "Прикметник",
+      "pronoun": "Займенник",
+      "numeral": "Числівник",
+      "adverb": "Прислівник",
+      "preposition": "Прийменник",
+      "conjunction": "Сполучник",
+      "custom": "Власний"
+    },
+    "cases": {
+      "nominative_singular": "Називний одн.",
+      "genitive_singular": "Родовий одн.",
+      "dative_singular": "Давальний одн.",
+      "accusative_singular": "Знахідний одн.",
+      "instrumental_singular": "Орудний одн.",
+      "locative_singular": "Місцевий одн.",
+      "vocative_singular": "Кличний одн.",
+      "nominative_plural": "Називний мн.",
+      "genitive_plural": "Родовий мн.",
+      "dative_plural": "Давальний мн.",
+      "accusative_plural": "Знахідний мн.",
+      "instrumental_plural": "Орудний мн.",
+      "locative_plural": "Місцевий мн.",
+      "vocative_plural": "Кличний мн.",
+      "withGender": "{{label}} (ч/ж/с)"
+    },
+    "verbColumns": {
+      "verb_infinitive": "Інфінітив",
+      "verb_present_1sg": "Теп. час · я",
+      "verb_present_2sg": "Теп. час · ти",
+      "verb_present_3sg": "Теп. час · він/вона/воно",
+      "verb_present_1pl": "Теп. час · ми",
+      "verb_present_2pl": "Теп. час · ви",
+      "verb_present_3pl": "Теп. час · вони",
+      "verb_past_1sg": "Мин. час · я",
+      "verb_past_2sg": "Мин. час · ти",
+      "verb_past_3sg": "Мин. час · він/вона/воно",
+      "verb_past_1pl": "Мин. час · ми",
+      "verb_past_2pl": "Мин. час · ви",
+      "verb_past_3pl": "Мин. час · вони"
+    },
+    "toast": {
+      "enterWordFirst": "Спочатку введіть слово в комірку",
+      "rowsLoadFailed": "Не вдалося завантажити дані рядків",
+      "cellMarkerSaveFailed": "Не вдалося зберегти позначку комірки",
+      "rowMarkerSaveFailed": "Не вдалося зберегти позначку рядка",
+      "rowOrderSaveFailed": "Не вдалося зберегти порядок рядків",
+      "addRowFailed": "Не вдалося додати рядок",
+      "deleteRowFailed": "Не вдалося видалити рядок",
+      "columnConfigSaveFailed": "Не вдалося зберегти конфігурацію стовпців",
+      "deleteColumnFailed": "Не вдалося видалити стовпець",
+      "addColumnFailed": "Не вдалося додати стовпець",
+      "freezeSaveFailed": "Не вдалося зберегти налаштування закріплення",
+      "createTabFailed": "Не вдалося створити сторінку",
+      "renameFailed": "Не вдалося перейменувати",
+      "deleteTabFailed": "Не вдалося видалити сторінку",
+      "duplicateTabFailed": "Не вдалося дублювати сторінку",
+      "moveTabFailed": "Не вдалося перемістити сторінку",
+      "wordNotFound": "Слово не знайдено. Введіть вручну.",
+      "serviceUnavailable": "Сервіс тимчасово недоступний. Використано офлайн-словник.",
+      "timeout": "Час очікування минув. Спробуйте ще раз.",
+      "slow": "Обробка триває. Зачекайте."
+    }
+  },
+  "settings": {
+    "title": "Налаштування",
+    "sections": {
+      "dataManagement": "Керування даними",
+      "legal": "Правові документи",
+      "preferences": "Налаштування",
+      "helpFeedback": "Допомога та відгуки"
+    },
+    "clearCache": "Очистити кеш",
+    "userAgreement": "Угода користувача",
+    "privacyPolicy": "Політика конфіденційності",
+    "changeLanguage": "Змінити мову",
+    "themeMode": "Тема",
+    "feedback": "Відгук",
+    "aboutUs": "Про нас",
+    "contactEmail": "Контактна пошта",
+    "deleteAccount": "Видалити обліковий запис",
+    "logoutTitle": "Вийти",
+    "logoutDescription": "Ви впевнені, що хочете вийти? Незбережений вміст буде кешовано локально.",
+    "logoutConfirm": "Вийти",
+    "deleteAccountTitle": "Видалити обліковий запис",
+    "deleteAccountDescription": "Ви впевнені, що хочете видалити обліковий запис? Цю дію не можна скасувати.",
+    "deleteAccountConfirm": "Підтвердити видалення",
+    "toast": {
+      "loggedOut": "Ви успішно вийшли",
+      "aboutDescription": "Цей застосунок створено з турботою незалежним розробником. Дякуємо за підтримку!",
+      "deleteAccountComingSoon": "Видалення облікового запису незабаром. Слідкуйте за оновленнями."
+    },
+    "cache": {
+      "title": "Очистити кеш",
+      "description": "Очищає лише локальні тимчасові файли. Дані зoshitів у хмарі не зачіпаються.",
+      "confirm": "Очистити кеш",
+      "clearing": "Очищення...",
+      "freed": "Звільнено {{size}} МБ"
+    },
+    "feedbackForm": {
+      "title": "Відгук",
+      "issueType": "Тип проблеми",
+      "descriptionLabel": "Опис (10–500 символів)",
+      "descriptionPlaceholder": "Опишіть проблему або пропозицію",
+      "screenshotsLabel": "Скріншоти (необов'язково, до 3, макс. 5 МБ кожен)",
+      "screenshotsSelected": "Обрано {{count}}",
+      "submit": "Надіслати відгук",
+      "types": {
+        "bug": "Помилка",
+        "rule": "Помилка правила",
+        "ux": "Пропозиція UX",
+        "other": "Інше"
+      },
+      "errors": {
+        "descriptionMin": "Опис має містити щонайменше 10 символів",
+        "descriptionMax": "Опис не може перевищувати 500 символів",
+        "maxFiles": "Можна завантажити до {{max}} скріншотів",
+        "imagesOnly": "Лише зображення",
+        "fileTooLarge": "Кожне зображення — не більше 5 МБ"
+      },
+      "success": "Відгук отримано. Ми відповімо протягом 3 робочих днів."
+    },
+    "account": { "upgradeVip": "Оновити до VIP" },
+    "theme": { "light": "Світла", "dark": "Темна", "system": "Системна" },
+    "language": {
+      "zh-CN": "简体中文",
+      "en": "English",
+      "uk": "Українська",
+      "de": "Deutsch"
+    }
+  },
+  "vip": {
+    "title": "Оновити до VIP",
+    "subtitle": "Розблокуйте всі функції навчання без обмежень",
+    "vipMember": "VIP-учасник",
+    "comparisonTitle": "Порівняння планів",
+    "offlineMessage": "Ви офлайн. Перевірте з'єднання.",
+    "backToSettings": "Назад до налаштувань",
+    "paymentUnavailable": "Оплата недоступна у вашому регіоні. Спробуйте пізніше.",
+    "toast": { "upgradeSuccess": "Оновлення успішне! Дякуємо за підтримку." },
+    "plans": {
+      "free": "Безкоштовно",
+      "vip": "VIP",
+      "recommended": "Рекомендовано",
+      "lifetime": "Довічне членство",
+      "price": "$9.99"
+    },
+    "features": {
+      "free": {
+        "oneNotebook": "1 зoshit",
+        "maxRows": "До 50 рядків слів",
+        "ads": "Реклама на сторінках функцій",
+        "noExport": "Без експорту"
+      },
+      "vip": {
+        "unlimitedNotebooks": "Необмежена кількість зoshitів",
+        "unlimitedRows": "Необмежена кількість рядків",
+        "noAds": "Без реклами на сторінках функцій",
+        "export": "Експорт зображення / Excel"
+      }
+    }
+  },
+  "tutorial": {
+    "title": "Посібник",
+    "subtitle": "Почніть роботу з Polish Notebook за 4 кроки",
+    "prev": "Назад",
+    "next": "Далі",
+    "steps": {
+      "1": {
+        "title": "Створіть зoshit",
+        "description": "На головній сторінці натисніть «Новий зoshit», щоб організувати словник польської. Кожен зoshit може містити кілька сторінок.",
+        "placeholder": "Крок 1: Створити зoshit"
+      },
+      "2": {
+        "title": "Додайте сторінки та слова",
+        "description": "Відкрийте зoshit і створіть сторінку. Введіть польські слова в таблицю. Стовпці перекладу та відмінювань налаштовуються автоматично.",
+        "placeholder": "Крок 2: Додати слова"
+      },
+      "3": {
+        "title": "Заповнення відмінювань одним кліком",
+        "description": "Натисніть «Генерувати» в комірці слова. Система аналізує частину мови та заповнює форми відмінювання та переклад.",
+        "placeholder": "Крок 3: Автозаповнення відмінювань"
+      },
+      "4": {
+        "title": "Масовий вибір і приховування/показ",
+        "description": "Увійдіть у режим вибору для масового приховування/показу комірок для самоперевірки. Подвійний клік перемикає стан приховування.",
+        "placeholder": "Крок 4: Масове приховування/показ"
+      }
+    }
+  },
+  "agreement": {
+    "userAgreement": "Угода користувача",
+    "privacyPolicy": "Політика конфіденційності",
+    "legalDocument": "Юридичний документ",
+    "loading": "Завантаження тексту угоди...",
+    "placeholder": "Повний юридичний текст буде опубліковано незабаром."
+  },
+  "guide": {
+    "title": "Довідник відмінювань",
+    "subtitle": "Довідкові таблиці відмінювань польських іменників, прикметників, займенників тощо",
+    "translationHeader": "Переклад",
+    "personHeader": "Особа",
+    "presentHeader": "Теперішній час",
+    "pastHeader": "Минулий час",
+    "verbExampleBadge": "Приклад дієслова: {{lemma}} ({{translation}})",
+    "singular": "Однина",
+    "plural": "Множина",
+    "posTabs": {
+      "noun": "Іменник",
+      "adverb": "Прислівник",
+      "adjective": "Прикметник",
+      "pronoun": "Займенник",
+      "numeral": "Числівник",
+      "verb": "Дієслово",
+      "preposition": "Прийменник",
+      "conjunction": "Сполучник"
+    },
+    "pronounSub": {
+      "personal": "Особові займенники",
+      "demonstrative": "Вказівні займенники"
+    },
+    "numeralSub": {
+      "two_three_four": "2/3/4",
+      "five_plus": "5+",
+      "ordinal": "Порядкові числівники"
+    },
+    "caseHeaders": {
+      "singular": {
+        "nom": "Називний одн.",
+        "gen": "Родовий одн.",
+        "dat": "Давальний одн.",
+        "acc": "Знахідний одн.",
+        "ins": "Орудний одн.",
+        "loc": "Місцевий одн.",
+        "voc": "Кличний одн."
+      },
+      "plural": {
+        "nom": "Називний мн.",
+        "gen": "Родовий мн.",
+        "dat": "Давальний мн.",
+        "acc": "Знахідний мн.",
+        "ins": "Орудний мн.",
+        "loc": "Місцевий мн.",
+        "voc": "Кличний мн."
+      }
+    },
+    "posDescriptions": {
+      "noun": "Іменники (rzeczownik) мають рід (ч/ж/с) і число (одн./мн.) з 7 відмінками.",
+      "adjective": "Прикметники (przymiotnik) узгоджуються за родом, числом і відмінком.",
+      "pronoun": "Займенники (zaimek): деякі відмінюються як прикметники, інші мають особливі форми.",
+      "numeral": "Числівники (liczebnik): 2/3/4 відмінюються як прикметники; 5+ як іменники.",
+      "verb": "Дієслова (czasownik) змінюються за часом, особою та числом; минулий час розрізняє рід.",
+      "adverb": "Прислівники (przysłówek) не відмінюються.",
+      "preposition": "Прийменники (przyimek) не відмінюються, але вимагають певного відмінка.",
+      "conjunction": "Сполучники (spójnik) не відмінюються."
+    },
+    "cases": {
+      "nom": { "name": "Називний", "description": "Підмет речення", "exampleTranslation": "Будинок великий." },
+      "gen": { "name": "Родовий", "description": "Володіння, частковість або заперечення", "exampleTranslation": "Немає молока." },
+      "dat": { "name": "Давальний", "description": "Непрямий додаток або напрямок дії", "exampleTranslation": "Я дарую квіти мамі." },
+      "acc": { "name": "Знахідний", "description": "Прямий додаток або напрямок руху", "exampleTranslation": "Я бачу кота." },
+      "ins": { "name": "Орудний", "description": "Засіб, спосіб або супровід", "exampleTranslation": "Я пишу ручкою." },
+      "loc": { "name": "Місцевий", "description": "Місце або положення (часто з w/na)", "exampleTranslation": "Я живу у Варшаві." },
+      "voc": { "name": "Кличний", "description": "Пряме звертання", "exampleTranslation": "Анно, йди сюди!" }
+    },
+    "entries": {
+      "nouns": {
+        "kobieta": { "translation": "жінка", "label": "жін. f." },
+        "dom": { "translation": "будинок", "label": "чол. m." },
+        "dziecko": { "translation": "дитина", "label": "сер. n." }
+      },
+      "adjectives": {
+        "dobry": { "translation": "добрий" },
+        "duzy": { "translation": "великий" },
+        "nowy": { "translation": "новий" }
+      },
+      "pronouns": {
+        "demonstrative": { "ten": { "translation": "цей/ця/це" }, "tamten": { "translation": "той/та/те" } },
+        "personal": { "ja": { "translation": "я" }, "ty": { "translation": "ти" } }
+      },
+      "numerals": {
+        "234": {
+          "dwa": { "translation": "два" },
+          "trzy": { "translation": "три" },
+          "cztery": { "translation": "чотири" }
+        },
+        "fivePlus": { "piec": { "translation": "п'ять" } },
+        "ordinal": {
+          "pierwszy": { "translation": "перший/перша/перше" },
+          "drugi": { "translation": "другий/друга/друге" }
+        }
+      },
+      "verbs": {
+        "robic": {
+          "translation": "робити",
+          "persons": {
+            "1sg": "я (ja)",
+            "2sg": "ти (ty)",
+            "3sg": "він/вона/воно",
+            "1pl": "ми (my)",
+            "2pl": "ви (wy)",
+            "3pl": "вони"
+          }
+        }
+      },
+      "invariable": {
+        "adverb": {
+          "time": {
+            "title": "Час",
+            "description": "Прислівники (przysłówek) не відмінюються.",
+            "items": {
+              "dzis": "сьогодні",
+              "jutro": "завтра",
+              "wczoraj": "вчора",
+              "teraz": "зараз",
+              "juz": "вже",
+              "jeszcze": "ще",
+              "zawsze": "завжди",
+              "nigdy": "ніколи",
+              "czesto": "часто",
+              "wkrotce": "незабаром"
+            }
+          },
+          "place": {
+            "title": "Місце",
+            "items": {
+              "tu_tutaj": "тут",
+              "tam": "там",
+              "wszedzie": "скрізь",
+              "nigdzie": "ніде",
+              "blisko": "близько",
+              "daleko": "далеко",
+              "wewnatrz": "всередині",
+              "na_zewnatrz": "назовні",
+              "w_gore": "вгору",
+              "w_dol": "вниз"
+            }
+          },
+          "degree": {
+            "title": "Ступінь",
+            "items": {
+              "bardzo": "дуже",
+              "troche": "трохи",
+              "calkiem": "цілком",
+              "dosc": "достатньо",
+              "za": "занадто",
+              "mniej": "менше",
+              "wiecej": "більше",
+              "najbardziej": "найбільше",
+              "prawie": "майже",
+              "zupelnie": "повністю"
+            }
+          },
+          "manner": {
+            "title": "Спосіб",
+            "items": {
+              "tak": "так",
+              "inaczej": "інакше",
+              "razem": "разом",
+              "szybko": "швидко",
+              "wolno": "повільно",
+              "dobrze": "добре",
+              "zle": "погано",
+              "prosto": "прямо",
+              "osobno": "окремо",
+              "naprawde": "справді"
+            }
+          }
+        },
+        "preposition": {
+          "common": {
+            "title": "Поширені прийменники",
+            "description": "Прийменники (przyimek) не відмінюються, але вимагають відмінка.",
+            "items": {
+              "w": "у (+ місц./знах.)",
+              "na": "на (+ місц./знах.)",
+              "do": "до (+ род.)",
+              "z": "з / від (+ род./оруд.)",
+              "od": "від / з (+ род.)",
+              "po": "після (+ місц.)",
+              "przed": "перед (+ оруд./знах.)",
+              "za": "за (+ оруд./знах.)",
+              "o": "про (+ місц./знах.)",
+              "dla": "для (+ род.)"
+            }
+          }
+        },
+        "conjunction": {
+          "common": {
+            "title": "Поширені сполучники",
+            "description": "Сполучники (spójnik) не відмінюються.",
+            "items": {
+              "i": "і",
+              "ale": "але",
+              "lub": "або",
+              "bo": "бо",
+              "ze": "що",
+              "wiec": "тому",
+              "jednak": "однак",
+              "albo": "або",
+              "czy": "чи",
+              "poniewaz": "тому що"
+            }
+          }
+        }
+      }
+    }
+  }
+}
