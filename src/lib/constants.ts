@@ -3,6 +3,7 @@ import type { ColumnsConfig } from '@/types';
 export const APP_NAME = 'PolishMate';
 export const APP_NAME_UPPER = 'POLISHMATE';
 export const APP_LOGO_SRC = '/tutorial/POLISH LOGO.png';
+export const APP_SITE_URL = 'https://polishmate.quickdart.app';
 
 export const TERMS_OF_SERVICE_URL =
   'https://fancy-kettle-d61.notion.site/Terms-of-service-3a4b92eed9b68054bbbacadf414354c3?source=copy_link';
@@ -67,7 +68,8 @@ export const BRAND_RED = '#C1121F';
 export const BRAND_RED_ALT = '#D32F2F';
 export const VIP_GOLD = '#FFD700';
 export const FREE_TIER_BG = '#F5F5F5';
-export const FREE_ROW_LIMIT = 50;
+export const FREE_TIER_MAX_ROWS = 30;
+export const FREE_ROW_LIMIT = FREE_TIER_MAX_ROWS;
 
 export const APP_VERSION = '1.0.0';
 export const CONTACT_EMAIL = 'kathy.zhao@quickdart.app';

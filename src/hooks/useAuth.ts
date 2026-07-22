@@ -105,11 +105,11 @@ export function useAuth() {
     [setUser, setIsSubmitting, setError, clearError],
   );
 
-  const signInWithGoogle = useCallback(async () => {
+  const signInWithGoogle = useCallback(async (redirectPath?: string) => {
     setIsSubmitting(true);
     clearError();
     try {
-      const { error: authError } = await authApi.signInWithGoogle();
+      const { error: authError } = await authApi.signInWithGoogle(redirectPath);
       if (authError) throw authError;
     } catch (err) {
       const message = getAuthErrorMessage(err, t);

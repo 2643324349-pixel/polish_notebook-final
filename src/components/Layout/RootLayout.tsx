@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import { Toaster } from 'sonner';
 import { AppSidebar } from '@/components/Layout/AppSidebar';
 import { BottomNav } from '@/components/Layout/BottomNav';
+import { Footer } from '@/components/Layout/Footer';
 import { MobileHeader } from '@/components/Layout/MobileHeader';
 import { NewNotebookDialog } from '@/components/notebooks/NewNotebookDialog';
 import { useAuth } from '@/hooks/useAuth';
@@ -37,9 +38,12 @@ export function RootLayout() {
       <MobileHeader onNewNotebook={() => setSidebarDialogOpen(true)} />
       <div className="flex min-h-0 flex-1 overflow-hidden">
         <AppSidebar onNewNotebook={() => setSidebarDialogOpen(true)} />
-        <main className="min-w-0 flex-1 overflow-auto bg-background">
-          <Outlet />
-        </main>
+        <div className="flex min-h-0 min-w-0 flex-1 flex-col overflow-hidden">
+          <main className="min-h-0 flex-1 overflow-auto bg-background pb-16 md:pb-0">
+            <Outlet />
+          </main>
+          <Footer />
+        </div>
       </div>
       <BottomNav />
 

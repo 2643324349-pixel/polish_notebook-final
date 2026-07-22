@@ -9,7 +9,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from '@/components/ui/dialog';
-import { FREE_ROW_LIMIT, VIP_GOLD } from '@/lib/constants';
+import { FREE_TIER_MAX_ROWS, VIP_GOLD } from '@/lib/constants';
 import { useTranslation } from '@/lib/i18n/t';
 
 interface VipUpgradeDialogProps {
@@ -45,7 +45,7 @@ export function VipUpgradeDialog({
             {t('vip.rowLimit.title')}
           </DialogTitle>
           <DialogDescription className="text-center">
-            {t('vip.rowLimit.description')}
+            {t('vip.rowLimit.description', { limit: FREE_TIER_MAX_ROWS })}
           </DialogDescription>
         </DialogHeader>
 
@@ -53,7 +53,7 @@ export function VipUpgradeDialog({
           <p className="text-center text-sm text-muted-foreground">
             {t('vip.rowLimit.currentCount', {
               count: rowCount,
-              limit: FREE_ROW_LIMIT,
+              limit: FREE_TIER_MAX_ROWS,
             })}
           </p>
         )}

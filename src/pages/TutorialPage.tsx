@@ -11,6 +11,7 @@ const TUTORIAL_STEP_IMAGES = [
   '/tutorial/step-3.png',
   '/tutorial/step-4.png',
   '/tutorial/step-5.png',
+  '/tutorial/step-6.png',
 ] as const;
 
 export function TutorialPage() {
@@ -18,7 +19,7 @@ export function TutorialPage() {
 
   const steps = useMemo(
     () =>
-      ([1, 2, 3, 4, 5] as const).map((n, index) => ({
+      ([1, 2, 3, 4, 5, 6] as const).map((n, index) => ({
         title: t(`tutorial.steps.${n}.title`),
         description: t(`tutorial.steps.${n}.description`),
         image: TUTORIAL_STEP_IMAGES[index],

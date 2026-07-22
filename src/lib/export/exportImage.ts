@@ -1,4 +1,5 @@
 import domtoimage from 'dom-to-image-more';
+import { APP_SITE_URL } from '@/lib/constants';
 import {
   buildExportFilename,
   dataUrlToBlob,
@@ -6,7 +7,9 @@ import {
   shareOrDownloadFile,
 } from '@/lib/export/exportUtils';
 
-const CAPTURE_SCALE = () => window.devicePixelRatio * 2;
+const CAPTURE_SCALE = () => Math.min(window.devicePixelRatio, 2);
+const WATERMARK_HEADER_HEIGHT = 40;
+const WATERMARK_TEXT_COLOR = '#6b7280';
 
 function sanitizeClone(root: HTMLElement): void {
   root.querySelectorAll('button').forEach((node) => node.remove());
@@ -21,6 +24,42 @@ function sanitizeClone(root: HTMLElement): void {
     el.style.left = '';
     el.style.zIndex = '';
   });
+}
+
+function createWatermarkHeader(): HTMLDivElement {
+  const header = document.createElement('div');
+  header.style.cssText = [
+    'box-sizing: border-box',
+    'width: 100%',
+    `height: ${WATERMARK_HEADER_HEIGHT}px`,
+    'padding: 0 16px',
+    'display: flex',
+    'align-items: center',
+    'background: #ffffff',
+    `color: ${WATERMARK_TEXT_COLOR}`,
+    'font-size: 14px',
+    `font-family: ${EXPORT_FONT_FAMILY}`,
+    'line-height: 1',
+    'flex-shrink: 0',
+  ].join(';');
+  header.textContent = APP_SITE_URL;
+  return header;
+}
+
+function createViewport(
+  width: number,
+  height: number,
+  content: HTMLElement,
+): HTMLDivElement {
+  const viewport = document.createElement('div');
+  viewport.style.cssText = [
+    `width: ${width}px`,
+    `height: ${height}px`,
+    'overflow: hidden',
+    'background: #ffffff',
+  ].join(';');
+  viewport.appendChild(content);
+  return viewport;
 }
 
 async function captureNode(
@@ -70,7 +109,21 @@ function createCaptureWrapper(
     'overflow: hidden',
     'background: #ffffff',
     `font-family: ${EXPORT_FONT_FAMILY}`,
+    'display: flex',
+    'flex-direction: column',
   ].join(';');
+  return wrapper;
+}
+
+function buildCaptureWrapper(
+  width: number,
+  viewportHeight: number,
+  tableClone: HTMLTableElement,
+): HTMLDivElement {
+  const captureHeight = viewportHeight + WATERMARK_HEADER_HEIGHT;
+  const wrapper = createCaptureWrapper(width, captureHeight);
+  wrapper.appendChild(createWatermarkHeader());
+  wrapper.appendChild(createViewport(width, viewportHeight, tableClone));
   return wrapper;
 }
 
@@ -78,8 +131,7 @@ export async function exportVisibleTableImage(
   container: HTMLElement,
 ): Promise<{ filename: string; method: 'shared' | 'downloaded' }> {
   const width = container.clientWidth;
-  const height = container.clientHeight;
-  const wrapper = createCaptureWrapper(width, height);
+  const viewportHeight = container.clientHeight;
 
   const table = getTableElement(container);
   const clone = table.cloneNode(true) as HTMLTableElement;
@@ -87,11 +139,15 @@ export async function exportVisibleTableImage(
   clone.style.fontFamily = EXPORT_FONT_FAMILY;
   sanitizeClone(clone);
 
-  wrapper.appendChild(clone);
+  const wrapper = buildCaptureWrapper(width, viewportHeight, clone);
   document.body.appendChild(wrapper);
 
   try {
-    const blob = await captureNode(wrapper, width, height);
+    const blob = await captureNode(
+      wrapper,
+      width,
+      viewportHeight + WATERMARK_HEADER_HEIGHT,
+    );
     const filename = buildExportFilename('png');
     const method = await shareOrDownloadFile(blob, filename, 'image/png');
     return { filename, method };
@@ -114,6 +170,7 @@ export async function exportFullTableImages(
   sanitizeClone(measureClone);
   measureWrapper.style.height = 'auto';
   measureWrapper.style.overflow = 'visible';
+  measureWrapper.style.display = 'block';
   measureWrapper.appendChild(measureClone);
   document.body.appendChild(measureWrapper);
   const totalHeight = measureClone.offsetHeight;
@@ -122,16 +179,20 @@ export async function exportFullTableImages(
   const pageCount = Math.max(1, Math.ceil(totalHeight / pageHeight));
 
   for (let page = 0; page < pageCount; page++) {
-    const wrapper = createCaptureWrapper(width, pageHeight);
     const clone = table.cloneNode(true) as HTMLTableElement;
     clone.style.transform = `translateY(${-page * pageHeight}px)`;
     clone.style.fontFamily = EXPORT_FONT_FAMILY;
     sanitizeClone(clone);
-    wrapper.appendChild(clone);
+
+    const wrapper = buildCaptureWrapper(width, pageHeight, clone);
     document.body.appendChild(wrapper);
 
     try {
-      const blob = await captureNode(wrapper, width, pageHeight);
+      const blob = await captureNode(
+        wrapper,
+        width,
+        pageHeight + WATERMARK_HEADER_HEIGHT,
+      );
       const filename = buildExportFilename('png', page + 1);
       await shareOrDownloadFile(blob, filename, 'image/png');
       onPageDownload?.(page + 1, pageCount);

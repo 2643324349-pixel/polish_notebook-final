@@ -1,5 +1,5 @@
 import { Check, X } from 'lucide-react';
-import { FREE_TIER_BG, VIP_GOLD } from '@/lib/constants';
+import { FREE_TIER_BG, FREE_TIER_MAX_ROWS, VIP_GOLD } from '@/lib/constants';
 import { useTranslation } from '@/lib/i18n/t';
 import { cn } from '@/lib/utils';
 
@@ -36,7 +36,9 @@ export function VipComparisonCards() {
               className="flex items-start gap-2 text-xs text-muted-foreground"
             >
               <X className="mt-0.5 size-3.5 shrink-0" />
-              {t(key)}
+              {key === 'vip.features.free.maxRows'
+                ? t(key, { limit: FREE_TIER_MAX_ROWS })
+                : t(key)}
             </li>
           ))}
         </ul>

@@ -46,6 +46,7 @@
     "signUpFree": "免费注册",
     "hasAccount": "已有账号？",
     "goToLogin": "去登录",
+    "backToHome": "返回首页",
     "termsPrefix": "登录即表示同意我们的",
     "termsOfService": "服务条款",
     "acceptedTermsPrefix": "我已阅读并同意",
@@ -80,8 +81,10 @@
   "layout": {
     "sidebar": {
       "notebookList": "笔记本列表",
-      "inflectionGuide": "变格指南",
+      "inflectionGuide": "语法形式指南",
       "tutorial": "使用教程",
+      "vip": "VIP 服务",
+      "vipUpgraded": "已升级 ✅",
       "myNotebooks": "我的笔记本",
       "loginToViewNotebooks": "登录后查看笔记本",
       "loadFailed": "加载失败",
@@ -96,6 +99,10 @@
       "home": "首页",
       "guide": "指南",
       "sheet": "表格"
+    },
+    "footer": {
+      "privacyPolicy": "隐私政策",
+      "termsOfService": "服务条款"
     }
   },
   "notebooks": {
@@ -419,7 +426,7 @@
     "paymentRedirectHint": "支付功能即将上线，请使用下方「模拟支付成功」按钮进行开发测试",
     "rowLimit": {
       "title": "已达到免费版行数上限",
-      "description": "您已达到免费版 50 行限制，升级 VIP 可无限添加",
+      "description": "您已达到免费版 {{limit}} 行限制，升级 VIP 可无限添加",
       "currentCount": "当前已用 {{count}} / {{limit}} 行",
       "upgrade": "升级 VIP",
       "countFailed": "无法检查行数限制，请稍后重试"
@@ -438,7 +445,7 @@
     "features": {
       "free": {
         "oneNotebook": "1 本笔记本",
-        "maxRows": "最多 50 行单词",
+        "maxRows": "最多 {{limit}} 行单词",
         "ads": "功能页有广告",
         "noExport": "不支持导出"
       },
@@ -452,29 +459,33 @@
   },
   "tutorial": {
     "title": "使用教程",
-    "subtitle": "5 步快速上手波兰语笔记本",
+    "subtitle": "6 步快速上手 PolishMate",
     "prev": "上一步",
     "next": "下一步",
     "steps": {
       "1": {
-        "title": "创建笔记本",
-        "description": "在首页点击「新建笔记本」，给笔记本起个名字，选个喜欢的颜色，方便区分。"
+        "title": "创建你的第一个笔记本",
+        "description": "创建笔记本来整理词汇。给它起个名字并选择颜色，方便日后查找。"
       },
       "2": {
-        "title": "添加页面和单词 & 一键生成变格和翻译",
-        "description": "打开笔记本并创建页面，选择你想要添加的变格或变形列(支持添加自定义备注列，输入单词后点击「✨ Generate」，自动补全所有变格和翻译。AI 补全的内容会带「AI」角标。"
+        "title": "一键生成语法形式",
+        "description": "添加页面，选择需要的语法形式列，输入单词的任意形式后点击 ✨ Generate。PolishMate 会自动找到词基并补全完整的语法表格和翻译。AI 补全的内容会显示「AI」角标。"
       },
       "3": {
-        "title": "选择隐藏/显示",
-        "description": "进入选择模式批量隐藏/显示单元格用于自测。双击单元格可快速切换隐藏状态。"
+        "title": "隐藏与显示自测",
+        "description": "隐藏答案来测试自己，准备好后再显示答案。无需离开笔记本，就能简单练习词汇和语法。"
       },
       "4": {
-        "title": "表格编辑操作",
-        "description": "1.点击「🔍」搜索单词，高亮显示所有匹配位置，上下导航快速定位。2.支持导出为 Excel 或图片，方便打印、分享或备备份。3.支持高亮单个单元格或者整行高亮。"
+        "title": "搜索、高亮与导出",
+        "description": "快速查找单词，用颜色高亮重要条目，并将笔记本导出为 Excel 表格或 PNG 图片，方便打印、分享或备份。"
       },
       "5": {
-        "title": "语言切换",
-        "description": "支持 4 种界面语言(中文,英语,乌克兰语,德语)，切换后所有文案,表格列名,以及新添加的单词翻译同步更新。"
+        "title": "多设备同步",
+        "description": "笔记本会自动保存，并在手机与网页浏览器之间同步。随时随地继续学习。"
+      },
+      "6": {
+        "title": "使用你的语言",
+        "description": "随时切换界面语言。菜单、表格列名以及新添加单词的翻译会自动更新。已有笔记需要在新语言下重新生成。"
       }
     }
   },

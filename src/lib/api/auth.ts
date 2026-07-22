@@ -11,11 +11,16 @@ export async function signUpWithEmail(email: string, password: string) {
   });
 }
 
-export async function signInWithGoogle() {
+export async function signInWithGoogle(redirectPath = '/notebooks') {
+  const safePath =
+    redirectPath.startsWith('/') && !redirectPath.startsWith('//')
+      ? redirectPath
+      : '/notebooks';
+
   return supabase.auth.signInWithOAuth({
     provider: 'google',
     options: {
-      redirectTo: `${window.location.origin}/notebooks`,
+      redirectTo: `${window.location.origin}${safePath}`,
     },
   });
 }

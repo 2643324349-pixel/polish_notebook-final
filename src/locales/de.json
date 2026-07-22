@@ -46,6 +46,7 @@
     "signUpFree": "Kostenlos registrieren",
     "hasAccount": "Bereits ein Konto?",
     "goToLogin": "Zur Anmeldung",
+    "backToHome": "Zurück zur Startseite",
     "termsPrefix": "Mit der Anmeldung stimmen Sie unseren",
     "termsOfService": "Nutzungsbedingungen",
     "acceptedTermsPrefix": "Ich habe gelesen und stimme zu:",
@@ -80,8 +81,10 @@
   "layout": {
     "sidebar": {
       "notebookList": "Hefte",
-      "inflectionGuide": "Deklinationsleitfaden",
+      "inflectionGuide": "Grammatikform-Leitfaden",
       "tutorial": "Anleitung",
+      "vip": "VIP-Service",
+      "vipUpgraded": "VIP ✅",
       "myNotebooks": "Meine Hefte",
       "loginToViewNotebooks": "Anmelden, um Hefte zu sehen",
       "loadFailed": "Laden fehlgeschlagen",
@@ -96,6 +99,10 @@
       "home": "Start",
       "guide": "Leitfaden",
       "sheet": "Tabelle"
+    },
+    "footer": {
+      "privacyPolicy": "Datenschutzrichtlinie",
+      "termsOfService": "Nutzungsbedingungen"
     }
   },
   "notebooks": {
@@ -419,7 +426,7 @@
     "paymentRedirectHint": "Echte Zahlungen folgen demnächst. Nutzen Sie die Schaltfläche unten zum Testen.",
     "rowLimit": {
       "title": "Kostenloses Zeilenlimit erreicht",
-      "description": "Sie haben das kostenlose Limit von 50 Zeilen erreicht. VIP-Upgrade für unbegrenzte Zeilen.",
+      "description": "Sie haben das kostenlose Limit von {{limit}} Zeilen erreicht. VIP-Upgrade für unbegrenzte Zeilen.",
       "currentCount": "Aktuell {{count}} / {{limit}} Zeilen",
       "upgrade": "VIP upgraden",
       "countFailed": "Zeilenlimit konnte nicht geprüft werden. Bitte erneut versuchen."
@@ -438,7 +445,7 @@
     "features": {
       "free": {
         "oneNotebook": "1 Heft",
-        "maxRows": "Bis zu 50 Wortzeilen",
+        "maxRows": "Bis zu {{limit}} Wortzeilen",
         "ads": "Werbung auf Funktionsseiten",
         "noExport": "Kein Export"
       },
@@ -452,29 +459,33 @@
   },
   "tutorial": {
     "title": "Anleitung",
-    "subtitle": "Polnisch-Heft in 5 Schritten starten",
+    "subtitle": "PolishMate in 6 Schritten starten",
     "prev": "Zurück",
     "next": "Weiter",
     "steps": {
       "1": {
-        "title": "Heft erstellen",
-        "description": "Auf der Startseite „Neues Heft“ tippen, dem Heft einen Namen geben und eine Lieblingsfarbe wählen – so behalten Sie den Überblick."
+        "title": "Erstes Heft erstellen",
+        "description": "Erstellen Sie ein Heft, um Ihren Wortschatz zu organisieren. Geben Sie ihm einen Namen und wählen Sie eine Farbe, damit Sie es später leicht wiederfinden."
       },
       "2": {
-        "title": "Seiten & Wörter, Deklination und Übersetzung per Klick",
-        "description": "Heft öffnen und Seite erstellen. Gewünschte Deklinations- oder Konjugationsspalten wählen (eigene Notizspalten möglich). Nach Worteingabe auf „✨ Generate“ klicken – alle Formen und Übersetzung werden automatisch ergänzt. KI-Inhalte tragen ein „AI“-Badge."
+        "title": "Grammatikformen per Klick generieren",
+        "description": "Fügen Sie eine Seite hinzu, wählen Sie die gewünschten Grammatikformen und geben Sie eine beliebige Wortform ein. Klicken Sie dann auf ✨ Generate. PolishMate findet automatisch die Grundform und füllt die vollständige Grammatiktabelle und Übersetzung aus. KI-Inhalte tragen ein „AI“-Badge."
       },
       "3": {
-        "title": "Ein-/Ausblenden auswählen",
-        "description": "Auswahlmodus für Massen-Ein-/Ausblenden zum Selbsttest. Doppelklick auf Zelle zum schnellen Umschalten."
+        "title": "Lernen mit Ein- und Ausblenden",
+        "description": "Blenden Sie Antworten aus, um sich selbst zu testen, und zeigen Sie sie an, wenn Sie bereit sind. So üben Sie Vokabeln und Grammatik direkt im Heft."
       },
       "4": {
-        "title": "Tabellen-Bearbeitung",
-        "description": "1. „🔍“ zum Suchen – alle Treffer werden hervorgehoben, mit Pfeil hoch/runter schnell springen. 2. Export als Excel oder Bild zum Drucken, Teilen oder Sichern. 3. Einzelne Zellen oder ganze Zeilen markieren."
+        "title": "Suchen, Markieren & Exportieren",
+        "description": "Finden Sie Wörter schnell, markieren Sie wichtige Einträge farbig und exportieren Sie Ihr Heft als Excel-Tabelle oder PNG-Bild zum Drucken, Teilen oder Sichern."
       },
       "5": {
-        "title": "Sprachwechsel",
-        "description": "4 UI-Sprachen (Chinesisch, Englisch, Ukrainisch, Deutsch). Nach dem Wechsel werden alle Texte, Spaltennamen und Übersetzungen neu hinzugefügter Wörter aktualisiert."
+        "title": "Geräteübergreifende Synchronisation",
+        "description": "Ihre Hefte werden automatisch gespeichert und zwischen Smartphone und Webbrowser synchronisiert. Lernen Sie jederzeit und überall weiter."
+      },
+      "6": {
+        "title": "PolishMate in Ihrer Sprache nutzen",
+        "description": "Wechseln Sie jederzeit die Oberflächensprache. Menüs, Spaltennamen und Übersetzungen werden für neu hinzugefügte Wörter automatisch aktualisiert. Bestehende Notizen müssen in der neuen Sprache neu generiert werden."
       }
     }
   },

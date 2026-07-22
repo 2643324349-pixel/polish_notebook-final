@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Crown, WifiOff } from 'lucide-react';
-import { Link, Navigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'sonner';
 import { VipComparisonCards } from '@/components/vip/VipComparisonCards';
 import { VipPayBar } from '@/components/vip/VipPayBar';
@@ -12,6 +12,7 @@ import { useTranslation } from '@/lib/i18n/t';
 
 export function VipPage() {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const { user, loading } = useAuth();
   const { isVip, mockUpgrade } = useVip();
   const [online, setOnline] = useState(navigator.onLine);
@@ -37,11 +38,16 @@ export function VipPage() {
     );
   }
 
-  if (!user) {
-    return <Navigate to="/login?redirect=/vip" replace />;
-  }
+  const requireLoginForUpgrade = () => {
+    navigate('/login?redirect=/vip');
+  };
 
   const handleMockPay = async () => {
+    if (!user) {
+      requireLoginForUpgrade();
+      return;
+    }
+
     setPaying(true);
     try {
       await mockUpgrade();
@@ -55,6 +61,11 @@ export function VipPage() {
   };
 
   const handlePay = async () => {
+    if (!user) {
+      requireLoginForUpgrade();
+      return;
+    }
+
     setPaying(true);
     try {
       await new Promise((r) => setTimeout(r, 1000));
@@ -75,7 +86,7 @@ export function VipPage() {
         </div>
         <h1 className="text-xl font-bold">{t('vip.title')}</h1>
         <p className="mt-1 text-sm text-muted-foreground">{t('vip.subtitle')}</p>
-        {isVip && (
+        {user && isVip && (
           <div className="mt-4 inline-flex items-center gap-2 rounded-full bg-amber-100 px-4 py-2 text-sm font-medium dark:bg-amber-900/40">
             <Crown className="size-4" style={{ color: VIP_GOLD }} />
             <span style={{ color: VIP_GOLD }}>{t('vip.vipMember')}</span>
@@ -126,9 +137,15 @@ export function VipPage() {
       )}
 
       <p className="text-center text-xs text-muted-foreground">
-        <Link to="/settings" className="underline hover:text-foreground">
-          {t('vip.backToSettings')}
-        </Link>
+        {user ? (
+          <Link to="/settings" className="underline hover:text-foreground">
+            {t('vip.backToSettings')}
+          </Link>
+        ) : (
+          <Link to="/notebooks" className="underline hover:text-foreground">
+            {t('auth.backToHome')}
+          </Link>
+        )}
       </p>
     </div>
   );

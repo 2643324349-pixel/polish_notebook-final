@@ -46,6 +46,7 @@
     "signUpFree": "Sign up for free",
     "hasAccount": "Already have an account?",
     "goToLogin": "Go to log in",
+    "backToHome": "Back to Home",
     "termsPrefix": "By logging in, you agree to our",
     "termsOfService": "Terms of Service",
     "acceptedTermsPrefix": "I have read and agree to the",
@@ -80,8 +81,10 @@
   "layout": {
     "sidebar": {
       "notebookList": "Notebooks",
-      "inflectionGuide": "Inflection Guide",
+      "inflectionGuide": "Grammar form guide",
       "tutorial": "Tutorial",
+      "vip": "VIP service",
+      "vipUpgraded": "VIP ✅",
       "myNotebooks": "My Notebooks",
       "loginToViewNotebooks": "Log in to view notebooks",
       "loadFailed": "Failed to load",
@@ -96,6 +99,10 @@
       "home": "Home",
       "guide": "Guide",
       "sheet": "Sheet"
+    },
+    "footer": {
+      "privacyPolicy": "Privacy Policy",
+      "termsOfService": "Terms of Service"
     }
   },
   "notebooks": {
@@ -419,7 +426,7 @@
     "paymentRedirectHint": "Real payments coming soon. Use the mock payment button below for testing.",
     "rowLimit": {
       "title": "Free row limit reached",
-      "description": "You have reached the free plan limit of 50 rows. Upgrade to VIP for unlimited rows.",
+      "description": "You have reached the free plan limit of {{limit}} rows. Upgrade to VIP for unlimited rows.",
       "currentCount": "Currently using {{count}} / {{limit}} rows",
       "upgrade": "Upgrade to VIP",
       "countFailed": "Could not check row limit. Please try again."
@@ -438,7 +445,7 @@
     "features": {
       "free": {
         "oneNotebook": "1 notebook",
-        "maxRows": "Up to 50 word rows",
+        "maxRows": "Up to {{limit}} word rows",
         "ads": "Ads on feature pages",
         "noExport": "No export"
       },
@@ -452,29 +459,33 @@
   },
   "tutorial": {
     "title": "Tutorial",
-    "subtitle": "Get started with PolishMate in 5 steps",
+    "subtitle": "Get started with PolishMate in 6 steps",
     "prev": "Previous",
     "next": "Next",
     "steps": {
       "1": {
-        "title": "Create a notebook",
-        "description": "On the home page, tap \"New notebook\", give it a name, and pick a color you like for easy identification."
+        "title": "Create Your First Notebook",
+        "description": "Create a notebook to organize your vocabulary. Give it a name and choose a color so you can easily find it later."
       },
       "2": {
-        "title": "Add pages & words, one-click inflection and translation",
-        "description": "Open a notebook and create a page. Choose the inflection or conjugation columns you want (custom note columns supported). After entering a word, click \"✨ Generate\" to auto-fill all inflections and translation. AI-filled content shows an \"AI\" badge."
+        "title": "Generate Grammar Forms in One Click",
+        "description": "Add a page, choose the grammar forms you want, then enter any form of a word and click ✨ Generate. PolishMate automatically finds the base word and fills in the complete grammar table and translation. AI-filled content shows an \"AI\" badge."
       },
       "3": {
-        "title": "Select hide/show",
-        "description": "Enter selection mode to bulk hide/show cells for self-testing. Double-click a cell to quickly toggle hidden state."
+        "title": "Study with Hide & Reveal ",
+        "description": "Hide answers to test yourself, then reveal them when you're ready. It's a simple way to practice vocabulary and grammar without leaving your notebook."
       },
       "4": {
-        "title": "Spreadsheet editing",
-        "description": "1. Click \"🔍\" to search words — all matches are highlighted; use up/down navigation to jump quickly. 2. Export to Excel or image for printing, sharing, or backup. 3. Highlight individual cells or entire rows."
+        "title": "Search, Highlight & Export",
+        "description": "Quickly find words, highlight important entries with colors, and export your notebook as an Excel spreadsheet or PNG image for printing, sharing, or backup."
       },
       "5": {
-        "title": "Language switching",
-        "description": "Supports 4 UI languages (Chinese, English, Ukrainian, German). After switching, all text, table column names, and translations for newly added words update together."
+        "title": "Sync Across Devices",
+        "description": "Your notebooks are automatically saved and synced across your phone and web browser. Continue learning anytime, anywhere."
+      },
+      "6": {
+        "title": "Use PolishMate in Your Language",
+        "description": "Switch the interface language anytime. Menus, table headers, and translations update automatically for newly added words. Existing notes need to be re-generated in the new language."
       }
     }
   },

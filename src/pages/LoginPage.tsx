@@ -1,8 +1,8 @@
 import { forwardRef, useEffect, useMemo, useState } from 'react';
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Loader2, Lock, Mail } from 'lucide-react';
+import { ArrowLeft, Loader2, Lock, Mail } from 'lucide-react';
 import { toast, Toaster } from 'sonner';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -11,6 +11,7 @@ import { Label } from '@/components/ui/label';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useAuth } from '@/hooks/useAuth';
 import { AppLogo } from '@/components/shared/AppLogo';
+import { Footer } from '@/components/Layout/Footer';
 import { APP_NAME, BRAND_RED, PRIVACY_POLICY_URL, TERMS_OF_SERVICE_URL } from '@/lib/constants';
 import {
   createLoginSchema,
@@ -139,7 +140,7 @@ export function LoginPage() {
 
   const handleGoogleLogin = async () => {
     try {
-      await signInWithGoogle();
+      await signInWithGoogle(getSafeRedirect(searchParams));
     } catch {
       toast.error(t('auth.toast.googleLoginFailed'));
     }
@@ -211,9 +212,9 @@ export function LoginPage() {
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-muted/40 px-4 py-8">
+    <div className="flex min-h-screen flex-col bg-muted/40">
       <Toaster position="top-center" richColors />
-
+      <div className="flex flex-1 items-center justify-center px-4 py-8">
       <Card className="w-full max-w-md rounded-2xl border-0 shadow-lg">
         <CardContent className="space-y-6 pt-8">
           <div className="flex items-center justify-center gap-2.5">
@@ -496,6 +497,17 @@ export function LoginPage() {
           </p>
         </CardContent>
       </Card>
+      </div>
+      <div className="pb-4 text-center">
+        <Link
+          to="/"
+          className="inline-flex items-center gap-1 text-sm text-muted-foreground transition-colors hover:text-foreground"
+        >
+          <ArrowLeft className="size-3.5" aria-hidden />
+          {t('auth.backToHome')}
+        </Link>
+      </div>
+      <Footer />
     </div>
   );
 }

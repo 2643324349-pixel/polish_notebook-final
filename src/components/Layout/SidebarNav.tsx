@@ -5,6 +5,7 @@ import {
   ChevronDown,
   ChevronRight,
   CircleHelp,
+  Crown,
   Home,
   Loader2,
   LogIn,
@@ -191,6 +192,7 @@ export function SidebarNav({
   const isNotebooksActive = location.pathname === '/notebooks';
   const isGuideActive = location.pathname === '/guide';
   const isTutorialActive = location.pathname === '/tutorial';
+  const isVipActive = location.pathname === '/vip';
   const isSettingsActive = location.pathname.startsWith('/settings');
   const { isVip } = useVip();
 
@@ -260,6 +262,22 @@ export function SidebarNav({
             style={isTutorialActive ? { color: BRAND_RED } : undefined}
           />
           {t('layout.sidebar.tutorial')}
+        </Link>
+        <Link
+          to="/vip"
+          onClick={onNavigate}
+          className={cn(
+            'flex items-center gap-2.5 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors',
+            isVipActive
+              ? 'bg-rose-50 text-rose-700'
+              : 'hover:bg-sidebar-accent',
+          )}
+        >
+          <Crown
+            className="size-4"
+            style={isVipActive ? { color: BRAND_RED } : undefined}
+          />
+          {t('layout.sidebar.vip')}
         </Link>
       </div>
 
