@@ -14,7 +14,7 @@ export function VipPage() {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const { user, loading } = useAuth();
-  const { isVip, mockUpgrade } = useVip();
+  const { isVip } = useVip();
   const [online, setOnline] = useState(navigator.onLine);
   const [paying, setPaying] = useState(false);
   const [paymentUnavailable] = useState(false);
@@ -40,24 +40,6 @@ export function VipPage() {
 
   const requireLoginForUpgrade = () => {
     navigate('/login?redirect=/vip');
-  };
-
-  const handleMockPay = async () => {
-    if (!user) {
-      requireLoginForUpgrade();
-      return;
-    }
-
-    setPaying(true);
-    try {
-      await mockUpgrade();
-      toast.success(t('vip.toast.upgradeSuccess'));
-    } catch (error) {
-      console.error('Mock VIP upgrade failed:', error);
-      toast.error(t('vip.toast.upgradeFailed'));
-    } finally {
-      setPaying(false);
-    }
   };
 
   const handlePay = async () => {
@@ -111,27 +93,14 @@ export function VipPage() {
           </div>
 
           {!isVip && (
-            <>
-              <VipPayBar
-                disabled={paymentUnavailable}
-                disabledHint={
-                  paymentUnavailable ? t('vip.paymentUnavailable') : undefined
-                }
-                loading={paying}
-                onPay={() => void handlePay()}
-              />
-              <div className="mt-3 text-center">
-                <Button
-                  type="button"
-                  variant="outline"
-                  size="sm"
-                  disabled={paying}
-                  onClick={() => void handleMockPay()}
-                >
-                  {t('vip.mockPay')}
-                </Button>
-              </div>
-            </>
+            <VipPayBar
+              disabled={paymentUnavailable}
+              disabledHint={
+                paymentUnavailable ? t('vip.paymentUnavailable') : undefined
+              }
+              loading={paying}
+              onPay={() => void handlePay()}
+            />
           )}
         </>
       )}
