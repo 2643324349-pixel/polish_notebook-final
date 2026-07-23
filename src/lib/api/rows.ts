@@ -19,30 +19,42 @@ export async function fetchRowsBySheetId(sheetId: string): Promise<Row[]> {
   const { data, error } = await supabase
     .from('rows')
     .select('*')
-    .eq('sheet_id', sheetId);
+    .eq('sheet_id', sheetId)
+    .order('created_at', { ascending: true });
 
   if (error) throw error;
   return (data ?? []) as Row[];
+}
+
+export function sortRowsByOrder(rows: Row[], order: string[]): Row[] {
+  if (rows.length === 0) return rows;
+
+  if (order.length === 0) {
+    return [...rows].sort(
+      (a, b) =>
+        new Date(a.created_at).getTime() - new Date(b.created_at).getTime(),
+    );
+  }
+
+  const map = new Map(rows.map((row) => [row.id, row]));
+  const ordered = order
+    .map((id) => map.get(id))
+    .filter((row): row is Row => !!row);
+
+  for (const row of rows) {
+    if (!order.includes(row.id)) {
+      ordered.push(row);
+    }
+  }
+
+  return ordered;
 }
 
 export async function fetchRowsForSheet(
   sheet: Pick<Sheet, 'id' | 'rows_order'>,
 ): Promise<Row[]> {
   const rows = await fetchRowsBySheetId(sheet.id);
-  const map = new Map(rows.map((row) => [row.id, row]));
-  const order = sheet.rows_order ?? [];
-
-  if (order.length === 0) return rows;
-
-  const ordered = order
-    .map((id) => map.get(id))
-    .filter((row): row is Row => !!row);
-
-  for (const row of rows) {
-    if (!order.includes(row.id)) ordered.push(row);
-  }
-
-  return ordered;
+  return sortRowsByOrder(rows, sheet.rows_order ?? []);
 }
 
 export async function updateRow(

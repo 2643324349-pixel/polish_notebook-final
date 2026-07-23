@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef } from 'react';
 import { toast } from 'sonner';
-import { createRow, deleteRow } from '@/lib/api/rows';
+import { createRow, deleteRow, sortRowsByOrder } from '@/lib/api/rows';
 import { updateSheet } from '@/lib/api/sheets';
 import { t } from '@/lib/i18n/t';
 import { createEmptyCellsData } from '@/lib/sheet/defaultSheet';
@@ -11,7 +11,7 @@ const SAVE_DEBOUNCE_MS = 500;
 interface UseSheetRowsOptions {
   sheet: Sheet | null;
   rows: Row[];
-  setRows: (rows: Row[]) => void;
+  setRows: (rows: Row[] | ((prev: Row[]) => Row[])) => void;
   onSheetChange: (sheet: Sheet) => void;
 }
 
@@ -63,26 +63,43 @@ export function useSheetRows({
       const cellsData = createEmptyCellsData(sheet.columns_config.columns);
       const row = await createRow(sheet.id, cellsData);
       const nextOrder = [...(sheet.rows_order ?? []), row.id];
-      const updated = await updateSheet(sheet.id, { rows_order: nextOrder });
-      onSheetChange(updated);
-      setRows([...rows, row]);
+
+      setRows((prev) => sortRowsByOrder([...prev, row], nextOrder));
+      onSheetChange({ ...sheet, rows_order: nextOrder });
+
+      try {
+        const updated = await updateSheet(sheet.id, { rows_order: nextOrder });
+        onSheetChange(updated);
+      } catch (error) {
+        setRows((prev) => prev.filter((item) => item.id !== row.id));
+        onSheetChange(sheet);
+        void deleteRow(row.id).catch(() => undefined);
+        throw error;
+      }
     } catch (error) {
       console.error('Failed to add row:', error);
       toast.error(t('sheet.toast.addRowFailed'));
     }
-  }, [sheet, rows, setRows, onSheetChange]);
+  }, [sheet, setRows, onSheetChange]);
 
   const deleteRowById = useCallback(
     async (rowId: string) => {
       if (!sheet) return;
 
+      const previousRows = rows;
+      const previousOrder = sheet.rows_order ?? [];
+      const nextOrder = previousOrder.filter((id) => id !== rowId);
+
+      setRows((prev) => prev.filter((row) => row.id !== rowId));
+      onSheetChange({ ...sheet, rows_order: nextOrder });
+
       try {
         await deleteRow(rowId);
-        const nextOrder = (sheet.rows_order ?? []).filter((id) => id !== rowId);
         const updated = await updateSheet(sheet.id, { rows_order: nextOrder });
         onSheetChange(updated);
-        setRows(rows.filter((row) => row.id !== rowId));
       } catch (error) {
+        setRows(previousRows);
+        onSheetChange(sheet);
         console.error('Failed to delete row:', error);
         toast.error(t('sheet.toast.deleteRowFailed'));
       }

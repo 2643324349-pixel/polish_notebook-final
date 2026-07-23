@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Loader2 } from 'lucide-react';
 import { toast } from 'sonner';
@@ -72,6 +72,7 @@ export function SheetPage() {
     rowId: string;
     sourceWord: string;
   } | null>(null);
+  const rowCountLoadedRef = useRef(false);
 
   const {
     mode,
@@ -133,6 +134,24 @@ export function SheetPage() {
     setRows,
     onSheetChange,
   });
+
+  useEffect(() => {
+    if (!user || isVip) {
+      rowCountLoadedRef.current = false;
+      setTotalRowCount(undefined);
+      return;
+    }
+
+    rowCountLoadedRef.current = false;
+    void countUserTotalRows(user.id)
+      .then((total) => {
+        rowCountLoadedRef.current = true;
+        setTotalRowCount(total);
+      })
+      .catch((error) => {
+        console.error('Failed to count user rows:', error);
+      });
+  }, [user, isVip]);
 
   const freezeState = useSheetFreeze({
     sheet: currentSheet,
@@ -429,22 +448,34 @@ export function SheetPage() {
     if (!user) return;
 
     if (!isVip) {
-      try {
-        const total = await countUserTotalRows(user.id);
-        if (total >= FREE_ROW_LIMIT) {
-          setTotalRowCount(total);
+      if (rowCountLoadedRef.current && totalRowCount !== undefined) {
+        if (totalRowCount >= FREE_ROW_LIMIT) {
           setVipDialogOpen(true);
           return;
         }
-      } catch (error) {
-        console.error('Failed to count user rows:', error);
-        toast.error(t('vip.rowLimit.countFailed'));
-        return;
+      } else {
+        try {
+          const total = await countUserTotalRows(user.id);
+          rowCountLoadedRef.current = true;
+          setTotalRowCount(total);
+          if (total >= FREE_ROW_LIMIT) {
+            setVipDialogOpen(true);
+            return;
+          }
+        } catch (error) {
+          console.error('Failed to count user rows:', error);
+          toast.error(t('vip.rowLimit.countFailed'));
+          return;
+        }
       }
     }
 
     await rowsState.addRow();
-  }, [user, isVip, rowsState, t]);
+
+    if (!isVip) {
+      setTotalRowCount((current) => (current ?? 0) + 1);
+    }
+  }, [user, isVip, rowsState, totalRowCount, t]);
 
   const loading = tabsLoading || rowsLoading;
 

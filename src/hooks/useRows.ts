@@ -1,6 +1,6 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { toast } from 'sonner';
-import { fetchRowsForSheet, updateRow } from '@/lib/api/rows';
+import { fetchRowsForSheet, sortRowsByOrder, updateRow } from '@/lib/api/rows';
 import { t } from '@/lib/i18n/t';
 import { createEmptyCell } from '@/lib/sheet/defaultSheet';
 import { applyRowMarker, buildRowMarkerCellsData } from '@/lib/sheet/rowMeta';
@@ -10,21 +10,20 @@ export function useRows(sheet: Sheet | null) {
   const [rows, setRows] = useState<Row[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const sheetIdRef = useRef<string | undefined>(sheet?.id);
 
   const sheetId = sheet?.id;
   const rowsOrder = sheet?.rows_order ?? [];
   const rowsOrderKey = rowsOrder.join(',');
 
-  const loadRows = useCallback(async () => {
-    if (!sheetId) {
-      setRows([]);
-      return;
-    }
-
+  const loadRows = useCallback(async (targetSheet: Sheet) => {
     setLoading(true);
     setError(null);
     try {
-      const data = await fetchRowsForSheet({ id: sheetId, rows_order: rowsOrder });
+      const data = await fetchRowsForSheet({
+        id: targetSheet.id,
+        rows_order: targetSheet.rows_order ?? [],
+      });
       setRows(data);
     } catch (err) {
       console.error('Failed to fetch rows:', err);
@@ -33,11 +32,31 @@ export function useRows(sheet: Sheet | null) {
     } finally {
       setLoading(false);
     }
-  }, [sheetId, rowsOrder, rowsOrderKey]);
+  }, []);
 
   useEffect(() => {
-    void loadRows();
-  }, [loadRows]);
+    if (!sheetId || !sheet) {
+      sheetIdRef.current = undefined;
+      setRows([]);
+      return;
+    }
+
+    const shouldLoad = sheetIdRef.current !== sheetId;
+    sheetIdRef.current = sheetId;
+
+    if (shouldLoad) {
+      void loadRows(sheet);
+    }
+  }, [sheetId, sheet, loadRows]);
+
+  useEffect(() => {
+    if (!sheetId) return;
+
+    setRows((prev) => {
+      if (prev.length === 0) return prev;
+      return sortRowsByOrder(prev, rowsOrder);
+    });
+  }, [sheetId, rowsOrderKey, rowsOrder]);
 
   const updateRowsCells = useCallback(
     async (updates: { rowId: string; cellsData: Row['cells_data'] }[]) => {
@@ -107,10 +126,10 @@ export function useRows(sheet: Sheet | null) {
       } catch (err) {
         console.error('Failed to update cell marker:', err);
         toast.error(t('sheet.toast.cellMarkerSaveFailed'));
-        void loadRows();
+        if (sheet) void loadRows(sheet);
       }
     },
-    [loadRows],
+    [loadRows, sheet],
   );
 
   const updateRowMarker = useCallback(
@@ -151,17 +170,17 @@ export function useRows(sheet: Sheet | null) {
       } catch (err) {
         console.error('Failed to update row marker:', err);
         toast.error(t('sheet.toast.rowMarkerSaveFailed'));
-        void loadRows();
+        if (sheet) void loadRows(sheet);
       }
     },
-    [loadRows],
+    [loadRows, sheet],
   );
 
   return {
     rows,
     loading,
     error,
-    reload: loadRows,
+    reload: () => (sheet ? loadRows(sheet) : Promise.resolve()),
     updateRowsCells,
     updateCellMarker,
     updateRowMarker,
