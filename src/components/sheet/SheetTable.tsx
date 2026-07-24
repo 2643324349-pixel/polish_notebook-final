@@ -18,17 +18,23 @@ import {
 import { SheetHeaderRow } from '@/components/sheet/SheetHeaderRow';
 import { SheetRow } from '@/components/sheet/SheetRow';
 import { getColumnLeftOffsets } from '@/lib/sheet/freezeUtils';
-import { getEffectiveColumnWidths } from '@/lib/sheet/columnWidthUtils';
+import {
+  estimateColumnPixelWidth,
+  getEffectiveColumnWidthStyles,
+} from '@/lib/sheet/columnWidthUtils';
 import type { ColumnPresetOption } from '@/lib/sheet/columnPresets';
 import {
   makeCellKey,
   useSelectionStore,
   type CellPosition,
 } from '@/store/selectionStore';
+import { SHEET_CELL_TEXT_CLASS } from '@/lib/sheet/sheetStyles';
+import { cn } from '@/lib/utils';
 import type { ColumnConfig, FrozenConfig, MarkerColor, Row } from '@/types';
 
 const HEADER_HEIGHT = 44;
-const ROW_HEIGHT = 56;
+/** Approximate row height for frozen-row sticky offsets when rows auto-grow. */
+const ESTIMATED_ROW_HEIGHT = 56;
 
 interface SheetTableProps {
   columns: ColumnConfig[];
@@ -115,14 +121,22 @@ export const SheetTable = forwardRef<HTMLDivElement, SheetTableProps>(
     return () => observer.disconnect();
   }, [scrollContainer]);
 
-  const columnWidths = useMemo(
-    () => getEffectiveColumnWidths(columns, containerWidth),
+  const columnWidthStyles = useMemo(
+    () => getEffectiveColumnWidthStyles(columns, containerWidth),
     [columns, containerWidth],
   );
 
+  const columnWidthEstimates = useMemo(
+    () =>
+      columns.map((column, index) =>
+        estimateColumnPixelWidth(column, columnWidthStyles[index], containerWidth),
+      ),
+    [columns, columnWidthStyles, containerWidth],
+  );
+
   const columnLeftOffsets = useMemo(
-    () => getColumnLeftOffsets(columns, columnWidths),
-    [columns, columnWidths],
+    () => getColumnLeftOffsets(columns, columnWidthEstimates),
+    [columns, columnWidthEstimates],
   );
 
   const rowIds = useMemo(() => rows.map((row) => row.id), [rows]);
@@ -214,12 +228,16 @@ export const SheetTable = forwardRef<HTMLDivElement, SheetTableProps>(
           ref.current = node;
         }
       }}
-      className="max-h-[calc(100vh-220px)] overflow-auto rounded-lg border"
+      className={cn(
+        'min-h-0 flex-1 overflow-auto rounded-lg border',
+        rows.length === 0 && 'min-h-[12rem]',
+      )}
     >
-      <table className="w-full min-w-max border-collapse text-sm">
+      <table className={cn('w-max min-w-full border-collapse', SHEET_CELL_TEXT_CLASS)}>
         <SheetHeaderRow
           columns={columns}
-          columnWidths={columnWidths}
+          columnWidthStyles={columnWidthStyles}
+          columnWidthEstimates={columnWidthEstimates}
           frozenConfig={frozenConfig}
           selectionMode={selectionMode}
           onAddPreset={onAddPreset}
@@ -242,11 +260,11 @@ export const SheetTable = forwardRef<HTMLDivElement, SheetTableProps>(
                   row={row}
                   rowIndex={rowIndex}
                   columns={columns}
-                  columnWidths={columnWidths}
+                  columnWidthStyles={columnWidthStyles}
                   columnLeftOffsets={columnLeftOffsets}
                   frozenConfig={frozenConfig}
                   headerHeight={HEADER_HEIGHT}
-                  rowHeight={ROW_HEIGHT}
+                  estimatedRowHeight={ESTIMATED_ROW_HEIGHT}
                   selectionMode={selectionMode}
                   isCellSelected={isSelected}
                   onDelete={onDeleteRow}

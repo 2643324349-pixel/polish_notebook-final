@@ -39,7 +39,7 @@ export function RootLayout() {
       <div className="flex min-h-0 flex-1 overflow-hidden">
         <AppSidebar onNewNotebook={() => setSidebarDialogOpen(true)} />
         <div className="flex min-h-0 min-w-0 flex-1 flex-col overflow-hidden">
-          <main className="min-h-0 flex-1 overflow-auto bg-background pb-16 md:pb-0">
+          <main className="flex min-h-0 flex-1 flex-col overflow-auto bg-background pb-16 md:pb-0">
             <Outlet />
           </main>
           <Footer />

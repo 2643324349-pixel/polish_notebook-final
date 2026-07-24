@@ -12,6 +12,7 @@ import {
 } from '@/lib/sheet/freezeUtils';
 import { isPlainEditableColumn } from '@/lib/sheet/defaultSheet';
 import { getRowMarkerColor } from '@/lib/sheet/rowMeta';
+import type { ColumnWidthStyle } from '@/lib/sheet/columnWidthUtils';
 import { cn } from '@/lib/utils';
 import type { CellData, ColumnConfig, FrozenConfig, MarkerColor, Row } from '@/types';
 
@@ -19,11 +20,11 @@ interface SheetRowProps {
   row: Row;
   rowIndex: number;
   columns: ColumnConfig[];
-  columnWidths: number[];
+  columnWidthStyles: ColumnWidthStyle[];
   columnLeftOffsets: number[];
   frozenConfig: FrozenConfig;
   headerHeight: number;
-  rowHeight: number;
+  estimatedRowHeight: number;
   selectionMode?: boolean;
   isCellSelected: (key: string) => boolean;
   searchMatchKeys?: Set<string>;
@@ -58,11 +59,11 @@ export function SheetRow({
   row,
   rowIndex,
   columns,
-  columnWidths,
+  columnWidthStyles,
   columnLeftOffsets,
   frozenConfig,
   headerHeight,
-  rowHeight,
+  estimatedRowHeight,
   selectionMode = false,
   isCellSelected,
   searchMatchKeys,
@@ -92,7 +93,7 @@ export function SheetRow({
   };
 
   const rowStickyTop = rowFrozen
-    ? headerHeight + rowIndex * rowHeight
+    ? headerHeight + rowIndex * estimatedRowHeight
     : undefined;
 
   const rowMarkerColor = getRowMarkerColor(row);
@@ -141,7 +142,7 @@ export function SheetRow({
               key={column.id}
               cell={row.cells_data[column.id] as CellData | undefined}
               rowMarkerColor={rowMarkerColor}
-              width={columnWidths[colIndex]}
+              widthStyle={columnWidthStyles[colIndex]}
               supportsGender={cellSupportsGender}
               plainEditable={plainEditable}
               frozen={frozen}

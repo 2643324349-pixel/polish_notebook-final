@@ -22,6 +22,9 @@ import {
   resolveCellMarkerColor,
 } from '@/lib/sheet/markerColors';
 import { useTranslation } from '@/lib/i18n/t';
+import { columnWidthStyleToCss } from '@/lib/sheet/columnWidthUtils';
+import type { ColumnWidthStyle } from '@/lib/sheet/columnWidthUtils';
+import { SHEET_CELL_TEXT_CLASS } from '@/lib/sheet/sheetStyles';
 import { cn } from '@/lib/utils';
 import type { CellData, MarkerColor } from '@/types';
 
@@ -31,7 +34,7 @@ const LONG_PRESS_MS = 500;
 interface SheetCellProps {
   cell: CellData | undefined;
   rowMarkerColor?: MarkerColor | null;
-  width: number;
+  widthStyle: ColumnWidthStyle;
   supportsGender: boolean;
   plainEditable?: boolean;
   frozen?: boolean;
@@ -53,7 +56,7 @@ interface SheetCellProps {
 export function SheetCell({
   cell,
   rowMarkerColor,
-  width,
+  widthStyle,
   supportsGender,
   plainEditable = false,
   frozen = false,
@@ -96,9 +99,8 @@ export function SheetCell({
   const showMarkerBackground = !!resolvedMarkerColor && !selectionMode;
 
   const style: React.CSSProperties = {
-    width,
-    minWidth: width,
-    maxWidth: width,
+    ...columnWidthStyleToCss(widthStyle),
+    height: 'auto',
     ...(showMarkerBackground
       ? {
           backgroundColor: resolvedMarkerColor,
@@ -242,7 +244,8 @@ export function SheetCell({
       style={style}
       data-search-active={isActiveSearchMatch ? 'true' : undefined}
       className={cn(
-        'group/cell relative border-r px-2 py-2 align-top',
+        'group/cell relative border-r px-2 py-2 align-top break-words [overflow-wrap:anywhere]',
+        SHEET_CELL_TEXT_CLASS,
         !showMarkerBackground && frozen && !isSearchMatch && 'bg-background',
         !showMarkerBackground &&
           hidden &&
@@ -309,7 +312,7 @@ export function SheetCell({
             }}
             onClick={(e) => e.stopPropagation()}
             onDoubleClick={(e) => e.stopPropagation()}
-            className="h-7 px-2 text-sm"
+            className={cn('h-7 px-2', SHEET_CELL_TEXT_CLASS)}
           />
           {saving && (
             <Loader2 className="size-3.5 shrink-0 animate-spin text-muted-foreground" />

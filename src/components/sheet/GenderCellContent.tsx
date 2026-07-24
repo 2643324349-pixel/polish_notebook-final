@@ -4,8 +4,12 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from '@/components/ui/tooltip';
-import { cellHasAiGenerated, getCellDisplayLines } from '@/lib/sheet/cellUtils';
+import {
+  cellHasAiGenerated,
+  getCellDisplayLines,
+} from '@/lib/sheet/cellUtils';
 import { useTranslation } from '@/lib/i18n/t';
+import { SHEET_CELL_TEXT_CLASS } from '@/lib/sheet/sheetStyles';
 import { cn } from '@/lib/utils';
 import type { CellData } from '@/types';
 
@@ -44,7 +48,8 @@ export function GenderCellContent({
       {lines.length > 0 ? (
         <div
           className={cn(
-            'space-y-0.5 text-sm leading-snug',
+            'space-y-0.5 break-words [overflow-wrap:anywhere]',
+            SHEET_CELL_TEXT_CLASS,
             hasSelectionCheckbox && 'pl-4 pt-3',
           )}
         >
@@ -52,6 +57,7 @@ export function GenderCellContent({
             <div
               key={index}
               className={cn(
+                'break-words [overflow-wrap:anywhere]',
                 hidden && !marked && 'text-muted-foreground',
                 hidden && marked && 'opacity-70',
                 hidden && line === '•••' && 'tracking-wider',
@@ -64,7 +70,6 @@ export function GenderCellContent({
       ) : (
         <span
           className={cn(
-            'text-sm',
             marked ? 'opacity-50' : 'text-muted-foreground/40',
           )}
         >

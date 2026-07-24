@@ -553,7 +553,7 @@ export function SheetPage() {
 
       <div
         className={cn(
-          'flex-1 overflow-hidden p-4',
+          'flex min-h-0 flex-1 flex-col overflow-hidden px-4 pt-4 pb-2 md:pb-3',
           selectionMode && 'pb-20',
         )}
       >

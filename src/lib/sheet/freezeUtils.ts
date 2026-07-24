@@ -16,12 +16,12 @@ export function clampFreezeConfig(
 
 export function getColumnLeftOffsets(
   columns: ColumnConfig[],
-  columnWidths?: number[],
+  columnWidthEstimates?: number[],
 ): number[] {
   let left = ROW_HANDLE_WIDTH;
   return columns.map((column, index) => {
     const offset = left;
-    left += columnWidths?.[index] ?? column.width;
+    left += columnWidthEstimates?.[index] ?? column.width;
     return offset;
   });
 }

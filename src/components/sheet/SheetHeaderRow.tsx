@@ -30,10 +30,12 @@ import { useTranslation } from '@/lib/i18n/t';
 import { cn } from '@/lib/utils';
 import type { ColumnConfig, FrozenConfig } from '@/types';
 import type { ColumnPresetOption } from '@/lib/sheet/columnPresets';
+import type { ColumnWidthStyle } from '@/lib/sheet/columnWidthUtils';
 
 interface SheetHeaderRowProps {
   columns: ColumnConfig[];
-  columnWidths: number[];
+  columnWidthStyles: ColumnWidthStyle[];
+  columnWidthEstimates: number[];
   frozenConfig: FrozenConfig;
   onAddPreset: (preset: ColumnPresetOption) => void | Promise<void>;
   onAddCustom: (label: string) => void | Promise<void>;
@@ -46,7 +48,8 @@ interface SheetHeaderRowProps {
 
 export function SheetHeaderRow({
   columns,
-  columnWidths,
+  columnWidthStyles,
+  columnWidthEstimates,
   frozenConfig,
   onAddPreset,
   onAddCustom,
@@ -73,8 +76,8 @@ export function SheetHeaderRow({
 
   const columnIds = useMemo(() => columns.map((col) => col.id), [columns]);
   const columnLeftOffsets = useMemo(
-    () => getColumnLeftOffsets(columns, columnWidths),
-    [columns, columnWidths],
+    () => getColumnLeftOffsets(columns, columnWidthEstimates),
+    [columns, columnWidthEstimates],
   );
   const headerFrozen = isHeaderRowFrozen(frozenConfig.freeze_rows);
 
@@ -127,7 +130,7 @@ export function SheetHeaderRow({
                 <ColumnHeader
                   key={column.id}
                   column={column}
-                  width={columnWidths[colIndex]}
+                  widthStyle={columnWidthStyles[colIndex]}
                   selectionMode={selectionMode}
                   frozen={headerFrozen || colIndex < frozenConfig.freeze_cols}
                   stickyLeft={

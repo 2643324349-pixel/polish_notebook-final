@@ -7,14 +7,16 @@ import { DragHandle } from '@/components/shared/DragHandle';
 import { NativeMenu, NativeMenuItem } from '@/components/sheet/NativeMenu';
 import { canRenameColumn } from '@/lib/sheet/columnUtils';
 import { getColumnLabel, isColumnLocked } from '@/lib/sheet/defaultSheet';
-import { SHEET_HEADER_CELL_CLASS } from '@/lib/sheet/sheetStyles';
+import { SHEET_HEADER_CELL_CLASS, SHEET_HEADER_TEXT_CLASS } from '@/lib/sheet/sheetStyles';
+import { columnWidthStyleToCss } from '@/lib/sheet/columnWidthUtils';
+import type { ColumnWidthStyle } from '@/lib/sheet/columnWidthUtils';
 import { useTranslation } from '@/lib/i18n/t';
 import { cn } from '@/lib/utils';
 import type { ColumnConfig } from '@/types';
 
 interface ColumnHeaderProps {
   column: ColumnConfig;
-  width?: number;
+  widthStyle?: ColumnWidthStyle;
   frozen?: boolean;
   stickyLeft?: number;
   stickyTop?: number;
@@ -26,7 +28,7 @@ interface ColumnHeaderProps {
 
 export function ColumnHeader({
   column,
-  width,
+  widthStyle,
   frozen = false,
   stickyLeft,
   stickyTop,
@@ -43,14 +45,10 @@ export function ColumnHeader({
     disabled: locked || selectionMode,
   });
 
-  const resolvedWidth = width ?? column.width;
-
   const style = {
+    ...columnWidthStyleToCss(widthStyle ?? { minWidth: column.width, maxWidth: column.width }),
     transform: CSS.Transform.toString(sortable.transform),
     transition: sortable.transition,
-    width: resolvedWidth,
-    minWidth: resolvedWidth,
-    maxWidth: resolvedWidth,
     ...(frozen
       ? {
           position: 'sticky' as const,
@@ -68,7 +66,7 @@ export function ColumnHeader({
       ref={sortable.setNodeRef}
       style={style}
       className={cn(
-        'relative px-2 py-2 text-left align-middle',
+        'relative px-2 py-2 text-left align-top break-words',
         SHEET_HEADER_CELL_CLASS,
         sortable.isDragging && 'z-10 opacity-80 shadow-md',
       )}
@@ -87,17 +85,17 @@ export function ColumnHeader({
           </div>
         )}
 
-        <div className="min-w-0 flex-1 text-sm font-medium">
+        <div className={cn('min-w-0 flex-1', SHEET_HEADER_TEXT_CLASS)}>
           {canRenameColumn(column) && !selectionMode ? (
             <EditableTitle
               value={label}
               onSave={onRename}
               placeholder={t('sheet.columnMenu.notePlaceholder')}
               className="block"
-              inputClassName="text-sm"
+              inputClassName={SHEET_HEADER_TEXT_CLASS}
             />
           ) : (
-            <span className="block truncate" title={label}>
+            <span className="block break-words leading-snug" title={label}>
               {label}
             </span>
           )}

@@ -21,8 +21,9 @@ export const LEMMA_COLUMN_ID = 'col_lemma';
 export {
   MOBILE_BREAKPOINT,
   MOBILE_MIN_COLUMN_WIDTH,
+  MOBILE_MAX_COLUMN_WIDTH,
   MOBILE_TRANSLATION_WIDTH_RATIO,
-  getEffectiveColumnWidths,
+  getEffectiveColumnWidthStyles,
   isMobileViewport,
 } from '@/lib/sheet/columnWidthUtils';
 
