@@ -89,6 +89,25 @@ def _tag_gender_bucket(tag: str) -> str | None:
     return None
 
 
+def _tag_covers_gender(tag: str, gender: str) -> bool:
+    for part in tag.split(":"):
+        tokens = part.split(".") if "." in part else [part]
+        if gender == "m" and any(token in ("m1", "m2", "m3") for token in tokens):
+            return True
+        if gender == "f" and "f" in tokens:
+            return True
+        if gender == "n" and "n" in tokens:
+            return True
+    return False
+
+
+def _case_specificity(tag: str, case: str) -> int:
+    tokens = _tag_case_tokens(tag)
+    if case not in tokens:
+        return 999
+    return len(tokens)
+
+
 def tag_matches_verb_case(tag: str, spec: dict[str, object]) -> bool:
     kind = spec.get("kind")
     if kind == "inf":
@@ -111,10 +130,29 @@ def tag_matches_verb_case(tag: str, spec: dict[str, object]) -> bool:
     return False
 
 
-def pick_gender_form(candidates: list[tuple[str, str]], gender: str) -> str | None:
-    for orth, tag in candidates:
-        bucket = _tag_gender_bucket(tag)
-        if bucket == gender:
+def _numeral_tag_priority(tag: str) -> int:
+    if ":rec:" in tag or tag.endswith(":rec"):
+        return 3
+    if ":col" in tag and ":ncol" not in tag:
+        return 2
+    if ":m1:" in tag and "m2" not in tag and "m3" not in tag:
+        return 1
+    return 0
+
+
+def pick_gender_form(
+    candidates: list[tuple[str, str]],
+    gender: str,
+    case: str | None = None,
+) -> str | None:
+    def rank(item: tuple[str, str]) -> tuple[int, int]:
+        _orth, tag = item
+        specificity = _case_specificity(tag, case) if case else 0
+        return (_numeral_tag_priority(tag), specificity)
+
+    ranked = sorted(candidates, key=rank)
+    for orth, tag in ranked:
+        if _tag_covers_gender(tag, gender):
             return orth
     return None
 

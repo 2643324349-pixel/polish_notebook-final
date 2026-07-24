@@ -138,10 +138,14 @@ async function fetchInflectionForms(
   let aiGeneratedCases: string[] = [];
 
   const morfLemma = analysis.morfLemma ?? analysis.lemma;
+  const effectiveHasGender =
+    analysis.hasGender ||
+    (analysis.pos === 'numeral' &&
+      Boolean(analysis.inflection.m || analysis.inflection.f || analysis.inflection.n));
   const generateOutcome = await generateForms({
     morfLemma,
     pos: analysis.pos,
-    hasGender: analysis.hasGender,
+    hasGender: effectiveHasGender,
     caseTypes,
     lang: uiLang,
   });

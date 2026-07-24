@@ -85,6 +85,14 @@ const MOCK_DATA: Record<string, MockResult> = {
     confidence: 'high',
     translations: ['一'],
   },
+  dwa: {
+    lemma: 'dwa',
+    pos: 'numeral',
+    inflection: { m: 'dwa', f: 'dwie', n: 'dwa' },
+    hasGender: true,
+    confidence: 'high',
+    translations: ['二'],
+  },
   pies: {
     lemma: 'pies',
     pos: 'noun',
@@ -157,6 +165,12 @@ const MOCK_FORMS: Record<string, GenerateFormsResult> = {
     nominative_singular: { m: 'dobry', f: 'dobra', n: 'dobre' },
     genitive_singular: { m: 'dobrego', f: 'dobrej', n: 'dobrego' },
     dative_singular: { m: 'dobremu', f: 'dobrej', n: 'dobremu' },
+  },
+  dwa: {
+    nominative_singular: { m: 'dwa', f: 'dwie', n: 'dwa' },
+    genitive_singular: { m: 'dwóch', f: 'dwóch', n: 'dwóch' },
+    accusative_singular: { m: 'dwa', f: 'dwie', n: 'dwa' },
+    instrumental_singular: { m: 'dwoma', f: 'dwiema', n: 'dwoma' },
   },
 };
 

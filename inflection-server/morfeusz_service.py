@@ -172,6 +172,54 @@ def _extract_gender_inflection(lemma: str, tag: str) -> dict[str, str]:
     return forms
 
 
+def _is_valid_numeral_tag(gen_tag: str) -> bool:
+    if not gen_tag.startswith("num:"):
+        return False
+    if ":com" in gen_tag or ":sup" in gen_tag:
+        return False
+    if gen_tag.endswith("numcomp"):
+        return False
+    return True
+
+
+def _extract_numeral_inflection(lemma: str) -> tuple[dict[str, str], bool]:
+    from case_mapping import (
+        _tag_case_tokens,
+        _tag_gender_bucket,
+        _numeral_tag_priority,
+    )
+
+    generated = morf.generate(lemma) or []
+    candidates: dict[str, list[tuple[str, str, int]]] = {
+        "m": [],
+        "f": [],
+        "n": [],
+    }
+
+    for orth, _, gen_tag, _, _ in generated:
+        if not _is_valid_numeral_tag(gen_tag):
+            continue
+        if "nom" not in _tag_case_tokens(gen_tag):
+            continue
+        bucket = _tag_gender_bucket(gen_tag)
+        if not bucket:
+            continue
+        candidates[bucket].append((orth, gen_tag, _numeral_tag_priority(gen_tag)))
+
+    forms: dict[str, str] = {}
+    for gender, items in candidates.items():
+        if not items:
+            continue
+        items.sort(key=lambda item: item[2])
+        forms[gender] = items[0][0]
+
+    if "m" in forms and "n" not in forms:
+        forms["n"] = forms["m"]
+
+    has_gender = bool(forms) and ("f" in forms or len(forms) >= 2)
+    return forms, has_gender
+
+
 def _build_inflection(interp: Interpretation) -> tuple[dict[str, str], bool]:
     parsed = parse_tag(interp.tag)
     category = parsed.category
@@ -180,15 +228,13 @@ def _build_inflection(interp: Interpretation) -> tuple[dict[str, str], bool]:
         inf = _get_infinitive_form(interp.lemma)
         return {"default": inf}, False
 
-    if is_gendered_pos(category, interp.tag) or category == "num":
-        lemma = interp.lemma
-        if category == "num" and not lemma.endswith(":A"):
-            adj_lemma = f"{_display_lemma(lemma)}:A"
-            forms = _extract_gender_inflection(adj_lemma, "adj:sg:nom.voc:m1.m2.m3:pos")
-            if len(forms) >= 2:
-                return forms, True
+    if category == "num":
+        forms, has_g = _extract_numeral_inflection(interp.lemma)
+        if has_g:
+            return forms, True
 
-        forms = _extract_gender_inflection(lemma, interp.tag)
+    if is_gendered_pos(category, interp.tag):
+        forms = _extract_gender_inflection(interp.lemma, interp.tag)
         if len(forms) >= 2:
             return forms, True
 
@@ -295,29 +341,42 @@ def _pick_inflection_form(
     number: str,
     case: str,
     has_gender: bool,
+    pos: str | None = None,
 ) -> dict[str, str]:
-    candidates: list[tuple[str, str]] = []
-    for orth, _, gen_tag, _, _ in generated:
-        if tag_matches_inflection_case(gen_tag, number, case):
-            candidates.append((orth, gen_tag))
+    numbers_to_try = [number]
+    if pos == "numeral" and number == "sg":
+        numbers_to_try.append("pl")
 
-    if not candidates:
-        return {}
+    for try_number in numbers_to_try:
+        candidates: list[tuple[str, str]] = []
+        for orth, _, gen_tag, _, _ in generated:
+            if pos == "numeral" and not _is_valid_numeral_tag(gen_tag):
+                continue
+            if tag_matches_inflection_case(gen_tag, try_number, case):
+                candidates.append((orth, gen_tag))
 
-    candidates = filter_positive_candidates(candidates)
+        if not candidates:
+            continue
 
-    if has_gender:
-        forms: dict[str, str] = {}
-        for gender in ("m", "f", "n"):
-            picked = pick_gender_form(candidates, gender)
-            if picked:
-                forms[gender] = picked
-        return forms
+        candidates = filter_positive_candidates(candidates)
 
-    for orth, tag in candidates:
-        if ":m1" in tag or tag.endswith(":m1"):
-            return {"default": orth}
-    return {"default": candidates[0][0]}
+        if has_gender:
+            forms: dict[str, str] = {}
+            for gender in ("m", "f", "n"):
+                picked = pick_gender_form(candidates, gender, case)
+                if picked:
+                    forms[gender] = picked
+            if forms:
+                if forms.get("m") and not forms.get("n"):
+                    forms["n"] = forms["m"]
+                return forms
+
+        for orth, tag in candidates:
+            if ":m1" in tag or tag.endswith(":m1"):
+                return {"default": orth}
+        return {"default": candidates[0][0]}
+
+    return {}
 
 
 def _pick_verb_form(
@@ -376,7 +435,13 @@ def generate_forms(
             if is_verb:
                 continue
             number, case = INFLECTION_CASE_SPECS[case_type]
-            picked = _pick_inflection_form(generated, number, case, has_gender)
+            picked = _pick_inflection_form(
+                generated,
+                number,
+                case,
+                has_gender,
+                pos,
+            )
             if picked:
                 forms[case_type] = picked
             continue
